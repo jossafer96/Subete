@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 
-<html class="desktop " prefix="og: http://ogp.me/ns#" lang="en-us" dir="ltr" itemscope=""
-    itemtype="http://schema.org/WebSite" data-page-type="pageBlank">
 
 <head>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="x-default">
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="en-us">
+   
     <meta itemprop="name" content="SUBETE!">
-    <meta name="twitter:title" content="SUBETE!">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ucraftcom">
-    <meta property="og:title" content="SUBETE!">
-    <meta property="og:url" content="https://subete.ucraft.net/comprar">
-    <meta property="og:type" content="website">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/fs">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/">
-    <link rel="dns-prefetch" href="https://storage.cloud.google.com/">
-    <link rel="dns-prefetch" href="https://storage.googleapis.com/">
-    <meta name="generator" content="Ucraft">
-
-    <link href="https://subete.ucraft.net/comprar" rel="canonical">
+   
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0">
     <meta name="HandheldFriendly" content="true">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="YES">
 
-    <meta name="ucraft-public/config/asset-manifest"
-        content="%7B%22bundles%22%3A%7B%22account-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine-vendor.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22assets%22%3A%7B%22assets%22%3A%5B%5D%7D%7D%7D">
-    <meta name="ucraft-public/config/environment"
-        content="%7B%22modulePrefix%22%3A%22ucraft-public%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22ucraft-public%22%2C%22version%22%3A%220.0.0+f8cdc653%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-modal-dialog%22%3A%7B%7D%7D">
-    <meta name="account-engine/config/environment" content="%7B%22modulePrefix%22%3A%22account-engine%22%7D">
-    <meta name="robots" content="noindex, nofollow">
-
+   
 
     <link rel="icon" type="image/png"
-    href="./SUBETE!_files/favicon.png">
+        href="./SUBETE!_files/favicon.png">
     <link href="./SUBETE!_files/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/public.css">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/icomoon.css" media="all"
@@ -68,25 +48,18 @@
             if (isCustomDomain()) {
 
                 const cookies = getCookieObject();
-
                 var lastLanguage = languagePrefix;
-
                 if (!lastLanguage) {
                     lastLanguage = getLastLanguageFromCookies(cookies);
                 }
 
                 var languagesObj = JSON.parse(window.hrefLangRelations);
-
                 const defaultLanguagePrefix = getDefaultLanguagePrefix();
-
                 const assignedLangPrefix = getAssignedLangPrefix();
-
                 if (languagesObj.routPrefix && languagesObj.urls.hasOwnProperty(languagesObj.routPrefix)) {
                     if (lastLanguage !== languagesObj.routPrefix || defaultLanguagePrefix == languagesObj.routPrefix ||
                         assignedLangPrefix === lastLanguage) {
-
                         var url = languagesObj.urls[languagesObj.routPrefix];
-
                         if (url === decodeURI(window.location.origin + window.location.pathname).replace(/\/$/, "")) {
                             if (assignedLangPrefix === languagesObj.routPrefix || defaultLanguagePrefix == languagesObj
                                 .routPrefix) {
@@ -190,48 +163,40 @@
             }
         }
     </script>
-    <link id="avast_os_ext_custom_font"
-        href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet"
-        type="text/css">
+    
 </head>
 
 <body class="">
-
-
-
     <div class="main-container">
         <div class="main-body">
-            <div class="main-layout
-		                                ">
+            <div class="main-layout">
                 <div class="layers-container">
                     <div class="layer">
                     </div>
                 </div>
-                <div class="header-and-main-rows  " style="background: rgb(240, 240, 240); margin-bottom: -247.087px;">
+                <div class="header-and-main-rows  " style="background: rgb(240, 240, 240); margin-bottom: -260.125px;">
                     <div class="header-rows">
                         <div class="uc-row header-row" data-id="26" style="  margin-bottom:0vh;  ">
                             <div class="row-container  container ">
                                 <div class="row headerRow" style="">
-
                                     <div class="column col-xs-4 " datacolumn-id="156" style="  padding:9px 0px;     ">
                                         <div class="column-container " style="">
-
-                                            <div class="module-container   only-mobile   align-left ModuleLogo
-                                         first   last " style=" padding:0px 20px 0px 0px;  ">
+                                            <div class="module-container only-mobile align-left ModuleLogo first last "
+                                                style=" padding:0px 20px 0px 0px;  ">
                                                 <div class="  module ModuleLogo " datamodule-id="166"
                                                     style="display:block;max-width:180px;">
                                                     <a href="https://subete.ucraft.net/">
-                                                        <img src="./SUBETE!_files/logo.png" alt="SUBETE!">
+                                                        <img src="./SUBETE!_files/logo.png"
+                                                            alt="SUBETE!">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-xs-5 " datacolumn-id="46" style="  padding:9px 0px;     ">
+                                    <div class="column col-xs-7 " datacolumn-id="46" style="  padding:9px 0px;     ">
                                         <div class="column-container " style="">
-
-                                            <div class="module-container   only-mobile   align-right ModuleNavigation
-                                         first   last " style=" padding:0 10px 0 20px;  ">
+                                            <div class="module-container   only-mobile   align-right ModuleNavigation first last "
+                                                style=" padding:0 10px 0 20px;  ">
                                                 <div class="  module ModuleNavigation " datamodule-id="64">
                                                     <input type="hidden" class="standard-navigation">
                                                     <style>
@@ -302,10 +267,6 @@
                                                         #navigation-64 li.page>ul.page-children>li.page>a {
                                                             color: #353535;
                                                             font-size: 14px;
-
-
-
-
                                                         }
 
 
@@ -336,10 +297,10 @@
                                                             text-align: center;
                                                         }
                                                     </style>
+
                                                     <div id="navigation-64" data-nav-sub-page-scollapsible="0"
                                                         class="navigation-inner  horizontal standard"
                                                         data-stretch-labels="0">
-
                                                         <div class="off-canvas-button icon"
                                                             data-selector="off-canvas-64"
                                                             style="width:25px;height:25px;">
@@ -362,39 +323,42 @@
                                                         <div class="standard-view ">
                                                             <ul class="navigation"
                                                                 style="font-family: &#39;Rubik&#39;;">
-                                                                <li class=" page   show" data-anchor="">
+                                                                <li class=" page  active   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./index.html"
+                                                                        href="./index.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             INICIO
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page show" data-anchor="">
+
+                                                                <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./COMPRAR_SUBETE!.html"
+                                                                        href="./COMPRAR_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             COMPRAR
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page active show" data-anchor="">
+
+                                                                <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./MISVIAJES_SUBETE!.html"
+                                                                        href="./MISVIAJES_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             MIS VIAJES
                                                                         </span>
                                                                     </a>
                                                                 </li>
+
                                                                 <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./CONTACTO_SUBETE!.html"                                                                        
+                                                                        href="./CONTACTO_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
-                                                                            CONTACTO&nbsp; &nbsp; &nbsp;&nbsp;
+                                                                            CONTACTo&nbsp; &nbsp; &nbsp;&nbsp;
                                                                         </span>
                                                                     </a>
                                                                 </li>
@@ -405,37 +369,427 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-xs-3 " datacolumn-id="172" style="  padding:9px 0px;     ">
-                                        <div class="column-container " style="">
+                                    
+                                </div>
+                            </div>
+                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
+                                <div class="margin-controller"></div>
+                            </div>
+                        </div>
 
-                                            <div class="module-container   only-mobile   align-center ModuleIcon
-                                         first   last " style=" padding:0px 20px 0px 20px;  ">
-                                                <div class="  module ModuleIcon " datamodule-id="175">
-                                                    <div class="icon"
-                                                        style="width:39px;height:39px; color:#353535; fill:#353535;">
-                                                        <a href="javascript:void(0)" target="_blank"
-                                                            rel="noopener noreferrer">
-                                                            <svg viewBox="0 0 100.01666259765625 97.46665954589844"
-                                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                <g transform="scale(1.2615644045414471)">
-                                                                    <g>
-                                                                        <path
-                                                                            d="M52.519,69.489l-9.329-3.389c-0.517-0.241-1.134-0.021-1.379,0.493c-0.246,0.517-0.026,1.134,0.49,1.38l10.119,3.759   l10.076-3.723c0.538-0.199,0.812-0.794,0.61-1.332c-0.196-0.534-0.794-0.812-1.327-0.611L52.519,69.489z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                        <path
-                                                                            d="M52.339,27.767c-8.761,0-13.786,5.522-13.786,15.155c0,9.614,11.025,20.606,13.786,20.606   c2.76,0,13.786-10.992,13.786-20.606C66.125,33.289,61.1,27.767,52.339,27.767z M52.339,59.061   c-2.647-2.037-9.645-9.401-9.645-16.139c0-7.31,3.244-11.014,9.645-11.014s9.645,3.704,9.645,11.014   C61.983,49.659,54.986,57.023,52.339,59.061z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                        <path
-                                                                            d="M51.63,11.027C29.778,11.027,12,28.35,12,49.642c0,21.293,17.778,38.614,39.63,38.614s39.626-17.321,39.626-38.614   C91.256,28.35,73.481,11.027,51.63,11.027z M77.06,73.588c-1.055-7.232-5.333-13.857-14.841-13.857   c-1.153,0-2.088,0.936-2.088,2.088c0,1.151,0.935,2.084,2.088,2.084c9.576,0,10.872,8.814,10.942,13.039   c-5.978,4.462-13.432,7.143-21.531,7.143c-8.104,0-15.556-2.681-21.536-7.143c0.073-4.225,1.367-13.039,10.948-13.039   c1.15,0,2.083-0.933,2.083-2.084c0-1.152-0.933-2.088-2.083-2.088c-9.513,0-13.791,6.625-14.846,13.857   c-6.193-6.204-10.025-14.643-10.025-23.946c0-18.991,15.904-34.443,35.458-34.443c19.551,0,35.457,15.453,35.457,34.443   C87.087,58.945,83.255,67.384,77.06,73.588z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
+                    </div>
+                    <div class="main-rows">
+                        <div class="uc-row    first" data-id="21" style="  margin-bottom:0vh;   background:; ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-12 " datacolumn-id="37"
+                                        style="  padding:26.693766937669377vh 0vh;     ">
+                                        <div class="column-container vertical-center" style="">
+
+                                            <div class="module-container  align-right ModuleTitle first  "
+                                                style=" padding:0px 20px 0px 20px;   padding-bottom:5.420054200542vh; ">
+                                                <div class="  module ModuleTitle " datamodule-id="65"
+                                                    style="display:block;max-width:316px;">
+                                                    <div class="uc-content">
+                                                        <h1 style="color:rgb(246, 255, 18);"><span
+                                                                style="font-family:baloo;"><strong>VIAJA
+                                                                    DE FORMA RÁPIDA Y SEGURA</strong></span></h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-right ModuleButton
+                                          last " style=" padding:0px 20px 0px 20px;  ">
+                                                <div class="  module ModuleButton " datamodule-id="63">
+                                                    <div class="button">
+                                                        <a class="btn btn1" href="https://subete.ucraft.net/en"
+                                                            target="_self" rel="">
+                                                            <span class="btn-text">COMPRA YA</span>
                                                         </a>
+                                                    </div>
+                                                    <style>
+                                                    </style>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
+                                <div class="margin-controller"></div>
+                            </div>
+                            <div class="bg-image lazy initial"
+                                data-bg="url(&#39;https://static.ucraft.app/fs/userFiles/subete/images/r21-T-WRLSsiZYE.jpg&#39;)"
+                                style="opacity: 1; background-position: 39.431% 47.688%; background-image: url(&quot;https://static.ucraft.app/fs/userFiles/subete/images/r21-T-WRLSsiZYE.jpg&quot;);"
+                                data-was-processed="true">
+                            </div>
+                        </div>
+
+                        <div class="uc-row                
+                                " data-id="25"
+                            style="  margin-bottom:13.550135501355vh;   background:radial-gradient(rgb(246, 255, 16) 0%,rgb(50, 50, 49) 100%); ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-4 " datacolumn-id="76"
+                                        style="  padding:29.45736434108527vh 0vh;     ">
+                                        <div class="column-container vertical-top"
+                                            style=" margin-top:5.7803468208092vh; ">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
+                                                <div class="  module ModuleImage " datamodule-id="75"
+                                                    style="display:block;max-width:259.984px;">
+                                                    <a class="image-module-link"
+                                                        href="https://kyotomag.ucraft.me/blog/news" target="_self"
+                                                        rel="">
+
+                                                        <div class="animated animated-75 " data-loading-animation=""
+                                                            data-animated-id="75">
+                                                            <div class="">
+                                                                <div>
+                                                                    <img class="image lazy initial loaded"
+                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/75-D2K1UZr4vxk.jpg"
+                                                                        src="./SUBETE!_files/75-D2K1UZr4vxk.jpg"
+                                                                        data-was-processed="true">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </a>
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleButton
+                                          last ">
+                                                <div class="  module ModuleButton " datamodule-id="143">
+                                                    <div class="button">
+                                                        <a class="btn buttons1530254589521"
+                                                            href="http://kyotomag.ucraft.me/blog/news" target="_self"
+                                                            rel="">
+                                                            <span class="btn-text" style="color: rgb(53, 53, 53)">BUSCA
+                                                                TU DESTINO</span>
+                                                        </a>
+                                                    </div>
+                                                    <style>
+                                                    </style>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-sm-4 " datacolumn-id="66"
+                                        style="  padding:29.45736434108527vh 0vh;     ">
+                                        <div class="column-container vertical-top"
+                                            style=" margin-top:4.3352601156069vh; ">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
+                                                <div class="  module ModuleImage " datamodule-id="78"
+                                                    style="display:block;max-width:239.984px;">
+                                                    <a class="image-module-link"
+                                                        href="https://kyotomag.ucraft.me/blog/events" target="_self"
+                                                        rel="">
+
+                                                        <div class="animated animated-78 " data-loading-animation=""
+                                                            data-animated-id="78">
+                                                            <div class="">
+                                                                <div>
+                                                                    <img class="image lazy initial loaded"
+                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/05201920152078-P22AFmgMuUc.jpg"
+                                                                        src="./SUBETE!_files/05201920152078-P22AFmgMuUc.jpg"
+                                                                        data-was-processed="true">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </a>
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleButton
+                                          last ">
+                                                <div class="  module ModuleButton " datamodule-id="144">
+                                                    <div class="button">
+                                                        <a class="btn buttons1530254589521"
+                                                            href="http://kyotomag.ucraft.me/blog/events" target="_self"
+                                                            rel="">
+                                                            <span class="btn-text"
+                                                                style="color: rgb(53, 53, 53)">COMPRA</span>
+                                                        </a>
+                                                    </div>
+                                                    <style>
+                                                    </style>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-sm-4 " datacolumn-id="56"
+                                        style="  padding:29.45736434108527vh 0vh;     ">
+                                        <div class="column-container vertical-top"
+                                            style=" margin-top:5.7803468208092vh; ">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
+                                                <div class="  module ModuleImage " datamodule-id="77"
+                                                    style="display:block;max-width:280px;">
+                                                    <a class="image-module-link"
+                                                        href="https://kyotomag.ucraft.me/blog/stories" target="_self"
+                                                        rel="">
+
+                                                        <div class="animated animated-77 " data-loading-animation=""
+                                                            data-animated-id="77">
+                                                            <div class="">
+                                                                <div>
+                                                                    <img class="image lazy initial loaded"
+                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/370288117277877-e6ZlCzBnGWI.jpg"
+                                                                        src="./SUBETE!_files/370288117277877-e6ZlCzBnGWI.jpg"
+                                                                        data-was-processed="true">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </a>
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleButton
+                                          last ">
+                                                <div class="  module ModuleButton " datamodule-id="145">
+                                                    <div class="button">
+                                                        <a class="btn buttons1530254589521"
+                                                            href="http://kyotomag.ucraft.me/blog/stories" target="_self"
+                                                            rel="">
+                                                            <span class="btn-text"
+                                                                style="color: rgb(53, 53, 53)">VIAJA</span>
+                                                        </a>
+                                                    </div>
+                                                    <style>
+                                                    </style>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="margin-container" data-type="row" style="bottom:-13.550135501355vh;">
+                                <div class="margin-controller"></div>
+                            </div>
+                        </div>
+
+                        <div class="uc-row                
+                                " data-id="38" style="  margin-bottom:0vh;   background:; ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-12 " datacolumn-id="61" style="  padding:0vh 0vh;     ">
+                                        <div class="column-container vertical-center" style="">
+
+                                            <div class="module-container   only-mobile   align-left ModuleTitle
+                                         first   last " style=" padding:0px 20px 0px 20px;  ">
+                                                <div class="  module ModuleTitle " datamodule-id="82"
+                                                    style="display:block;max-width:552px;">
+                                                    <div class="uc-content">
+                                                        <h1 style="color:rgb(0, 0, 0);">LA MEJOR FORMA DE VIAJAR</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
+                                <div class="margin-controller"></div>
+                            </div>
+                        </div>
+
+                        <div class="uc-row                
+                                " data-id="45" style="  margin-bottom:14.836795252226vh;  ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-12 " datacolumn-id="72"
+                                        style="  padding:4.3478260869565215vh 0vh;     ">
+                                        <div class="column-container vertical-center" style="">
+
+                                            <div class="module-container  align-center ModuleParagraph
+                                         first   last ">
+                                                <div class="  module ModuleParagraph " datamodule-id="86">
+                                                    <div class="uc-content ">
+                                                        <h3 class="AlignLeft">SUBETE! te ofrece los mejores destinos,
+                                                            los mas comodos asientos y los mejores precios, desde la
+                                                            comodidad de tu casa&nbsp;</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="margin-container" data-type="row" style="bottom:-14.836795252226vh;">
+                                <div class="margin-controller"></div>
+                            </div>
+                        </div>
+
+                        <div class="uc-row                
+                                " data-id="102" style=" ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-12 " datacolumn-id="170" style="      ">
+                                        <div class="column-container vertical-top" style="">
+
+                                            <div class="module-container  align-center ModuleTitle
+                                         first   last ">
+                                                <div class="  module ModuleTitle " datamodule-id="190">
+                                                    <div class="uc-content">
+                                                        <h3><span style="font-family:baloo;"><strong>NUESTROS
+                                                                    SERVICIOS</strong></span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="margin-container" data-type="row">
+                                <div class="margin-controller"></div>
+                            </div>
+                        </div>
+
+                        <div class="uc-row last uc-animation staticParallax active" data-id="100"
+                            data-effect="staticParallax" style="  margin-bottom:0vh;   background:rgb(239, 239, 239); ">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-4 " datacolumn-id="166"
+                                        style="  padding:0.14836795252225518vh 0vh;     ">
+                                        <div class="column-container vertical-top" style="">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0 40px 0 40px;  ">
+                                                <div class="  module ModuleImage " datamodule-id="183"
+                                                    style="display:block;max-width:199.984375px;">
+                                                    <div class="animated animated-183 " data-loading-animation=""
+                                                        data-animated-id="183">
+                                                        <div class="">
+                                                            <div>
+                                                                <img class="image lazy loaded"
+                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/183-1190152.png"
+                                                                    src="./SUBETE!_files/183-1190152.png"
+                                                                    data-was-processed="true">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleTitle
+                                          last ">
+                                                <div class="  module ModuleTitle " datamodule-id="186">
+                                                    <div class="uc-content">
+                                                        <h3>COMPRAS ONLINE</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-sm-4 " datacolumn-id="167"
+                                        style="  padding:0.14836795252225518vh 0vh;     ">
+                                        <div class="column-container vertical-top"
+                                            style=" margin-top:1.4836795252226vh; ">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0px 20px 0px 20px;  ">
+                                                <div class="  module ModuleImage " datamodule-id="184"
+                                                    style="display:block;max-width:199.984375px;">
+                                                    <div class="animated animated-184 " data-loading-animation=""
+                                                        data-animated-id="184">
+                                                        <div class="">
+                                                            <div>
+                                                                <img class="image lazy loaded"
+                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/10252256184-delivery-2.png"
+                                                                    src="./SUBETE!_files/10252256184-delivery-2.png"
+                                                                    data-was-processed="true">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleTitle
+                                          last ">
+                                                <div class="  module ModuleTitle " datamodule-id="187">
+                                                    <div class="uc-content">
+                                                        <h3>ENCOMIENDAS Y PAQUETERIA</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-sm-4 " datacolumn-id="168"
+                                        style="  padding:0.14836795252225518vh 0vh;     ">
+                                        <div class="column-container vertical-top" style="">
+
+                                            <div class="module-container  align-center ModuleImage
+                                         first  " style=" padding:0px 40px 0px 40px;  ">
+                                                <div class="  module ModuleImage " datamodule-id="185"
+                                                    style="display:block;max-width:199.984375px;">
+                                                    <div class="animated animated-185 " data-loading-animation=""
+                                                        data-animated-id="185">
+                                                        <div class="">
+                                                            <div>
+                                                                <img class="image lazy loaded"
+                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/185-bus-512.png"
+                                                                    src="./SUBETE!_files/185-bus-512.png"
+                                                                    data-was-processed="true">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="module-container  align-center ModuleTitle
+                                          last ">
+                                                <div class="  module ModuleTitle " datamodule-id="188">
+                                                    <div class="uc-content">
+                                                        <h3>RESERVAS DE AUTOBUSES</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,67 +806,10 @@
                         </div>
 
                     </div>
-                    <div class="main-rows">
-                        <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/226742.jpg);    background-repeat: no-repeat;
-                        background-size: cover;">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12  " datacolumn-id="37"
-                                        style="  ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="wrap" data-pos="0" style="width: 100%;background: #0000009e">
-                                                <div class="headbar">
-                                                    <i class="zmdi zmdi-arrow-left btnBack"></i> <span style="font-size: 2.1rem;" >MIS VIAJES</span>
-                                                </div>
-                                             
-                                        
-                                                <section>
-                                                    <div class="tbl-header">
-                                                      <table cellpadding="0" cellspacing="0" border="0" >
-                                                        <thead style="background: YELLOW;">
-                                                          <tr>
-                                                            <th>DESDE</th>
-                                                            <th>HACIA</th>
-                                                            <th>PRECIO</th>
-                                                            <th>FECHA</th>
-                                                            <th>ESTADO</th>
-                                                          </tr>
-                                                        </thead>
-                                                      </table>
-                                                    </div>
-                                                    <div class="tbl-content">
-                                                      <table cellpadding="0" cellspacing="0" border="0">
-                                                        <tbody>
-                                                          <tr>
-                                                            <td>TEGUCIGALPA</td>
-                                                            <td>CHOLUTECA</td>
-                                                            <td>$ 160</td>
-                                                            <td>2/05/2019</td>
-                                                            <td>FINALIZADO</td>
-                                                          </tr>
-                                                          
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-                                                  </section>
-
-                                            
-                                            
-                                        </div>
-                                    </div>
-
-                                   
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    <div class="push" style="height: 260.125px;"></div>
                 </div>
-                <div class="footer-rows" style="">
-                    <div class="uc-row                
+                <div class="footer-rows" style="padding-bottom: 0px;">
+                    <div class="uc-row    last              
                                 " data-id="33"
                         style="  background:linear-gradient(180deg, rgb(240, 241, 238) 0%,rgb(50, 50, 49) 100%); ">
                         <div class="row-container  container ">
@@ -869,36 +1166,40 @@
     <!-- Auth token -->
     <script type="text/javascript">
         var page = {
-            "id": 16,
-            "title": "COMPRAR",
-            "alias": "comprar",
+            "id": 1,
+            "title": "INICIO",
+            "alias": "inicio",
             "component": null,
             "type": "pageBlank",
             "target": 0,
-            "homepage": 0,
+            "homepage": 1,
             "isHeading": 0,
             "isHidden": 0,
             "externalUrl": "",
             "navigationId": 0,
             "parentPageId": null,
-            "ordering": 2,
+            "ordering": 1,
             "languageId": 1,
-            "langRefId": 16,
-            "params": "{\"margin\":1.8500000000000001,\"published\":1,\"bodyBackgroundColor\":\"rgb(240, 240, 240)\"}",
-            "seoParams": "{\"pageTitle\":\"\",\"description\":\"\",\"state\":0}",
-            "updated_at": "2019-04-03 18:00:50",
-            "created_at": "2019-04-03 18:00:25",
-            "deleted_at": "0000-00-00 00:00:00",
-            "margin": 1.85,
-            "published": 1,
-            "bodyBackgroundColor": "rgb(240, 240, 240)",
-            "seo": {
-                "pageTitle": "",
+            "langRefId": 1,
+            "params": "{\"margin\":1.8500000000000001,\"bodyBackgroundColor\":\"rgb(240, 240, 240)\"}",
+            "seoParams": {
+                "pageTitle": "Title of your homepage",
                 "description": "",
+                "image": "",
                 "state": 0
             },
-            "visibility": [2, 3, 4],
-            "parent": null
+            "margin": 1.85,
+            "bodyBackgroundColor": "rgb(240, 240, 240)",
+            "seo": {
+                "pageTitle": "Title of your homepage",
+                "description": "",
+                "image": "",
+                "state": 0
+            },
+            "exists": 1,
+            "url": "https:\/\/subete.ucraft.net",
+            "current": 1,
+            "visibility": [2, 3, 4]
         };
         var currentLanguageObject = {
             "id": 1,
@@ -964,7 +1265,7 @@
         var apiPrefix = 'api';
         var publicApiPrefix = 'papi';
         var publicRestPrefix = 'prest';
-        var pageId = '16';
+        var pageId = '1';
         var siteInfo = {
             domain: ''
         };

@@ -1,0 +1,295 @@
+<div class="btn_container">
+        <a class="open_button" href="#">Fire Away</a>
+      </div>
+
+      
+        
+        
+        <div class="container-body modal_info">
+        
+            
+            <div class="container form-container">
+            <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-7 col-xlg-12">
+                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xlg-4 payment-overview">
+                    <p class="price-payment">$49</p>
+                    <p class="product-payment">Readymade</p>
+                </div>
+                <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 col-lg-8 col-xlg-8 payment-details">
+                <p class="credit-card-title">Credit Card Details</p>
+                <p><input type="number" class="long-number" required placeholder="Account Number"></p>
+                    <select class="month-select minimal">
+                        <option>Expiry Month</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <select class="year-select minimal">
+                        <option>Expiry Year</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                    </select>
+                    <input type="number" class="security-code" placeholder="eg. 123">
+                    <p class="security-code-p">3 or 4 digits found on the signature strip</p>
+                    
+                    <div class="bottom-buttons">
+        
+                        <div class="proceed">
+                            <button class="proceed-button">Proceed</button>
+                        </div>
+        
+                        <div class="or">Or</div>
+        
+                        <div class="paypal">
+                            <button class="paypal-button">Pay with <i class="fa fa-paypal paypal-icon" aria-hidden="true"></i>ayPal</button>
+                        </div>
+                    
+                    </div>				
+                        
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        </div>
+        </div>
+      <div class="modal_overlay">
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script>
+
+
+
+      
+      (function(){
+  var $content = $('.modal_info').detach();
+
+  $('.open_button').on('click', function(e){
+    modal.open({
+      content: $content,
+      width: 1000,
+      height: 1000,
+    });
+    $content.addClass('modal_content');
+    $('.modal, .modal_overlay').addClass('display');
+    $('.open_button').addClass('load');
+  });
+}());
+
+var modal = (function(){
+
+  var $close = $('<button role="button" class="modal_close" title="Close"><span></span></button>');
+  var $content = $('<div class="modal_content"/>');
+  var $modal = $('<div class="modal"/>');
+  var $window = $(window);
+
+  $modal.append($content, $close);
+
+  $close.on('click', function(e){
+    $('.modal, .modal_overlay').addClass('conceal');
+    $('.modal, .modal_overlay').removeClass('display');
+    $('.open_button').removeClass('load');
+    e.preventDefault();
+    modal.close();
+  });
+
+  return {
+    center: function(){
+      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+      var left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
+      $modal.css({
+        top: top + $window.scrollTop(),
+        left: left + $window.scrollLeft(),
+      });
+    },
+    open: function(settings){
+      $content.empty().append(settings.content);
+
+      $modal.css({
+        width: settings.width || 'auto',
+        height: settings.height || 'auto'
+      }).appendTo('body');
+
+      modal.center();
+      $(window).on('resize', modal.center);
+    },
+    close: function(){
+      $content.empty();
+      $modal.detach();
+      $(window).off('resize', modal.center);
+    }
+  };
+}());
+  </script>
+
+  <style>
+    
+
+
+
+.modal {
+  opacity: 0;
+  padding: 50px;
+  position: absolute;
+  z-index: 1100;
+  -webkit-transition: opacity 600ms linear 600ms;
+  -moz-transition: opacity 600ms linear 600ms;
+  -ms-transition: opacity 600ms linear 600ms;
+  -o-transition: opacity 600ms linear 600ms;
+  transition: opacity 600ms linear 600ms;
+}
+
+.modal_info {
+  background: #FCF9F2;
+  padding: 50px 100px;
+  text-align: center;
+}
+
+.modal_overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 900;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -ms-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+
+.display {
+  opacity: 1;
+  visibility: visible;
+}
+
+.conceal {
+  visibility: visible;
+}
+
+
+.open_button {
+  background: #363D4E;
+  display: inline-block;
+  height: 66px;
+  position: relative;
+  vertical-align: middle;
+  whitespace: normal;
+  width: 172px;
+  z-index: 1000;
+  -webkit-transition: opacity 100ms linear;
+  -moz-transition: opacity 100ms linear;
+  -ms-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
+}
+
+
+ 
+a.open_button:hover {
+  background: #3E465A;
+}
+
+a.open_button.load {
+  opacity: 0;
+}
+
+button.modal_close {
+  background: #363D4E;
+  border: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  -webkit-transition: -webkit-transform 600ms;
+  -moz-transition: -moz-transform 600ms;
+  -ms-transition: -ms-transform 600ms;
+  -o-transition: -o-transform 600ms;
+  transition: transform 600ms;
+}
+
+button.modal_close:hover {
+  background: #3E465A;
+  -webkit-transform: rotate(360deg) scale(1.10);
+  -moz-transform: rotate(360deg) scale(1.10);
+  -ms-transform: rotate(360deg) scale(1.10);
+  -o-transform: rotate(360deg) scale(1.10);
+  transform: rotate(360deg) scale(1.10);
+  -webkit-transition: -webkit-transform 600ms;
+  -moz-transition: -moz-transform 600ms;
+  -ms-transition: -ms-transform 600ms;
+  -o-transition: -o-transform 600ms;
+  transition: transform 600ms;
+}
+
+button.modal_close span, span:before, span:after {
+  background: #FFFFFF;
+  
+}
+
+button.modal_close span:first-child {
+  background: none;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button.modal_close span:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+button.modal_close span:after {
+  -webkit-transform: translateY(-2px) rotate(-45deg);
+  -moz-transform: translateY(-2px) rotate(-45deg);
+  -ms-transform: translateY(-2px) rotate(-45deg);
+  -o-transform: translateY(-2px) rotate(-45deg);
+  transform: translateY(-2px) rotate(-45deg);
+  top: 2px;
+}
+
+
+
+
+  </style>

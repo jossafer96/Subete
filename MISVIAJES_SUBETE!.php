@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 
-<html class="desktop " prefix="og: http://ogp.me/ns#" lang="en-us" dir="ltr" itemscope=""
-    itemtype="http://schema.org/WebSite" data-page-type="pageBlank">
+
 
 <head>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="x-default">
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="en-us">
+   
     <meta itemprop="name" content="SUBETE!">
-    <meta name="twitter:title" content="SUBETE!">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ucraftcom">
-    <meta property="og:title" content="SUBETE!">
-    <meta property="og:url" content="https://subete.ucraft.net/comprar">
-    <meta property="og:type" content="website">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/fs">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/">
-    <link rel="dns-prefetch" href="https://storage.cloud.google.com/">
-    <link rel="dns-prefetch" href="https://storage.googleapis.com/">
-    <meta name="generator" content="Ucraft">
+    
 
     <link href="https://subete.ucraft.net/comprar" rel="canonical">
 
@@ -28,16 +17,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="YES">
 
-    <meta name="ucraft-public/config/asset-manifest"
-        content="%7B%22bundles%22%3A%7B%22account-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine-vendor.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22assets%22%3A%7B%22assets%22%3A%5B%5D%7D%7D%7D">
-    <meta name="ucraft-public/config/environment"
-        content="%7B%22modulePrefix%22%3A%22ucraft-public%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22ucraft-public%22%2C%22version%22%3A%220.0.0+f8cdc653%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-modal-dialog%22%3A%7B%7D%7D">
-    <meta name="account-engine/config/environment" content="%7B%22modulePrefix%22%3A%22account-engine%22%7D">
-    <meta name="robots" content="noindex, nofollow">
 
 
     <link rel="icon" type="image/png"
-        href="./SUBETE!_files/favicon.png">
+    href="./SUBETE!_files/favicon.png">
     <link href="./SUBETE!_files/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/public.css">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/icomoon.css" media="all"
@@ -190,9 +173,7 @@
             }
         }
     </script>
-    <link id="avast_os_ext_custom_font"
-        href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet"
-        type="text/css">
+    
 </head>
 
 <body class="">
@@ -227,7 +208,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-xs-5 " datacolumn-id="46" style="  padding:9px 0px;     ">
+                                    <div class="column col-xs-7 " datacolumn-id="46" style="  padding:9px 0px;     ">
                                         <div class="column-container " style="">
 
                                             <div class="module-container   only-mobile   align-right ModuleNavigation
@@ -364,7 +345,7 @@
                                                                 style="font-family: &#39;Rubik&#39;;">
                                                                 <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./index.html"
+                                                                        href="./index.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             INICIO
@@ -373,25 +354,25 @@
                                                                 </li>
                                                                 <li class=" page show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./COMPRAR_SUBETE!.html"
+                                                                        href="./COMPRAR_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             COMPRAR
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page   show" data-anchor="">
+                                                                <li class=" page active show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./MISVIAJES_SUBETE!.html"
+                                                                        href="./MISVIAJES_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             MIS VIAJES
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page  active show" data-anchor="">
+                                                                <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./CONTACTO_SUBETE!.html"
+                                                                        href="./CONTACTO_SUBETE!.php"                                                                        
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             CONTACTO&nbsp; &nbsp; &nbsp;&nbsp;
@@ -405,42 +386,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-xs-3 " datacolumn-id="172" style="  padding:9px 0px;     ">
-                                        <div class="column-container " style="">
-
-                                            <div class="module-container   only-mobile   align-center ModuleIcon
-                                         first   last " style=" padding:0px 20px 0px 20px;  ">
-                                                <div class="  module ModuleIcon " datamodule-id="175">
-                                                    <div class="icon"
-                                                        style="width:39px;height:39px; color:#353535; fill:#353535;">
-                                                        <a href="javascript:void(0)" target="_blank"
-                                                            rel="noopener noreferrer">
-                                                            <svg viewBox="0 0 100.01666259765625 97.46665954589844"
-                                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                <g transform="scale(1.2615644045414471)">
-                                                                    <g>
-                                                                        <path
-                                                                            d="M52.519,69.489l-9.329-3.389c-0.517-0.241-1.134-0.021-1.379,0.493c-0.246,0.517-0.026,1.134,0.49,1.38l10.119,3.759   l10.076-3.723c0.538-0.199,0.812-0.794,0.61-1.332c-0.196-0.534-0.794-0.812-1.327-0.611L52.519,69.489z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                        <path
-                                                                            d="M52.339,27.767c-8.761,0-13.786,5.522-13.786,15.155c0,9.614,11.025,20.606,13.786,20.606   c2.76,0,13.786-10.992,13.786-20.606C66.125,33.289,61.1,27.767,52.339,27.767z M52.339,59.061   c-2.647-2.037-9.645-9.401-9.645-16.139c0-7.31,3.244-11.014,9.645-11.014s9.645,3.704,9.645,11.014   C61.983,49.659,54.986,57.023,52.339,59.061z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                        <path
-                                                                            d="M51.63,11.027C29.778,11.027,12,28.35,12,49.642c0,21.293,17.778,38.614,39.63,38.614s39.626-17.321,39.626-38.614   C91.256,28.35,73.481,11.027,51.63,11.027z M77.06,73.588c-1.055-7.232-5.333-13.857-14.841-13.857   c-1.153,0-2.088,0.936-2.088,2.088c0,1.151,0.935,2.084,2.088,2.084c9.576,0,10.872,8.814,10.942,13.039   c-5.978,4.462-13.432,7.143-21.531,7.143c-8.104,0-15.556-2.681-21.536-7.143c0.073-4.225,1.367-13.039,10.948-13.039   c1.15,0,2.083-0.933,2.083-2.084c0-1.152-0.933-2.088-2.083-2.088c-9.513,0-13.791,6.625-14.846,13.857   c-6.193-6.204-10.025-14.643-10.025-23.946c0-18.991,15.904-34.443,35.458-34.443c19.551,0,35.457,15.453,35.457,34.443   C87.087,58.945,83.255,67.384,77.06,73.588z"
-                                                                            transform="translate(-12,-11.027000427246094)">
-                                                                        </path>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
 
@@ -450,42 +396,67 @@
                                 <div class="margin-controller"></div>
                             </div>
                         </div>
-                        <div class="main-rows">
-                                <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/school_bus.jpg);    background-repeat: no-repeat;
-                                background-size: cover;">
-                                    <div class="row-container  container ">
-                                        <div class="row mainRow" style="">
-                        <section id="hire">
-                            <h1 style="color: white;">Contactame</h1>
-                            
-                            <form>
-                                  <div class="field name-box">
-                                        <input type="text" id="name" placeholder="Quien eres?"/>
-                                        <label for="name">Nombre</label>
-                                        <span class="ss-icon">check</span>
-                                  </div>
-                        
-                                  <div class="field email-box">
-                                        <input type="text" id="email" placeholder="nombre@email.com"/>
-                                        <label for="email">Correo</label>
-                                        <span class="ss-icon">check</span>
-                                  </div>
-                        
-                                  <div class="field msg-box">
-                                        <textarea id="msg" rows="4" placeholder="Escribe tu mensaje aqui......"/></textarea>
-                                        <label for="msg">Msg</label>
-                                        <span class="ss-icon">check</span>
-                                  </div>
-                        
-                                  <input class="button" type="submit" value="Enviar" />
-                          </form>
-                        </section>
 
                     </div>
+                    <div class="main-rows">
+                        <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/226742.jpg);    background-repeat: no-repeat;
+                        background-size: cover;">
+                            <div class="row-container  container ">
+                                <div class="row mainRow" style="">
+
+                                    <div class="column col-sm-12  " datacolumn-id="37"
+                                        style="  ">
+                                        <div class="column-container vertical-center" style="">
+
+                                            <div class="wrap" data-pos="0" style="width: 100%;background: #0000009e">
+                                                <div class="headbar">
+                                                    <i class="zmdi zmdi-arrow-left btnBack"></i> <span style="font-size: 2.1rem;" >MIS VIAJES</span>
+                                                </div>
+                                             
+                                        
+                                                <section>
+                                                    <div class="tbl-header">
+                                                      <table cellpadding="0" cellspacing="0" border="0" >
+                                                        <thead style="background: YELLOW;">
+                                                          <tr>
+                                                            <th>DESDE</th>
+                                                            <th>HACIA</th>
+                                                            <th>PRECIO</th>
+                                                            <th>FECHA</th>
+                                                            <th>ESTADO</th>
+                                                          </tr>
+                                                        </thead>
+                                                      </table>
+                                                    </div>
+                                                    <div class="tbl-content">
+                                                      <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td>TEGUCIGALPA</td>
+                                                            <td>CHOLUTECA</td>
+                                                            <td>$ 160</td>
+                                                            <td>2/05/2019</td>
+                                                            <td>FINALIZADO</td>
+                                                          </tr>
+                                                          
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </div>
+                                                  </section>
+
+                                            
+                                            
+                                        </div>
+                                    </div>
+
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-                   
                 <div class="footer-rows" style="">
                     <div class="uc-row                
                                 " data-id="33"
@@ -761,191 +732,8 @@
                 text-align: left;
             }
         }
-
-
-
-
-
-        body {
-  background: #efefef;
-  font-size: 62.5%;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  color: #b6b6b6;
-}
-body section {
-  background: #0000009e;
-  margin: 60px auto 120px;
-  border-top: 15px solid yellow;
-  text-align: center;
-  padding: 50px 0 110px;
-  width: 80%;
-  max-width: 1100px;
-}
-body section h1 {
-  margin-bottom: 40px;
-  font-size: 4em;
-  text-transform: uppercase;
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-}
-form {
-  width: 58.33333%;
-  margin: 0 auto;
-}
-form .field {
-  width: 100%;
-  position: relative;
-  margin-bottom: 15px;
-}
-form .field label {
-    color: black;
-  text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: yellow;
-  width: 100%;
-  padding: 18px 0;
-  font-size: 1.45em;
-  letter-spacing: 0.075em;
-  -webkit-transition: all 333ms ease-in-out;
-  -moz-transition: all 333ms ease-in-out;
-  -o-transition: all 333ms ease-in-out;
-  -ms-transition: all 333ms ease-in-out;
-  transition: all 333ms ease-in-out;
-}
-form .field label + span {
-  font-family: "SSStandard";
-  opacity: 0;
-  color: white;
-  display: block;
-  position: absolute;
-  top: 12px;
-  left: 7%;
-  font-size: 2.5em;
-  text-shadow: 1px 2px 0 #cd6302;
-  -webkit-transition: all 333ms ease-in-out;
-  -moz-transition: all 333ms ease-in-out;
-  -o-transition: all 333ms ease-in-out;
-  -ms-transition: all 333ms ease-in-out;
-  transition: all 333ms ease-in-out;
-}
-form .field input[type="text"], form .field textarea {
-  border: none;
-  background: black;
-  width: 80.5%;
-  margin: 0;
-  padding: 18px 0;
-  padding-left: 19.5%;
-  color: #313a3d;
-  font-size: 1.4em;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-form .field input[type="text"]#msg, form .field textarea#msg {
-  height: 18px;
-  resize: none;
-  -webkit-transition: all 333ms ease-in-out;
-  -moz-transition: all 333ms ease-in-out;
-  -o-transition: all 333ms ease-in-out;
-  -ms-transition: all 333ms ease-in-out;
-  transition: all 333ms ease-in-out;
-}
-form .field input[type="text"]:focus, form .field textarea:focus, form .field input[type="text"].focused, form .field textarea.focused {
-  outline: none;
-}
-form .field input[type="text"]:focus#msg, form .field textarea:focus#msg, form .field input[type="text"].focused#msg, form .field textarea.focused#msg {
-  padding-bottom: 150px;
-}
-form .field input[type="text"]:focus + label, form .field textarea:focus + label, form .field input[type="text"].focused + label, form .field textarea.focused + label {
-  width: 18%;
-  background: #fd9638;
-  color: #313a3d;
-}
-form .field input[type="text"].focused + label, form .field textarea.focused + label {
-  color: #fd9638;
-}
-form .field:hover label {
-  width: 18%;
-  background: #313a3d;
-  color: white;
-}
-form input[type="submit"] {
-  background: #fd9638;
-  color: white;
-  -webkit-appearance: none;
-  border: none;
-  text-transform: uppercase;
-  position: relative;
-  padding: 13px 50px;
-  font-size: 1.4em;
-  letter-spacing: 0.1em;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  -webkit-transition: all 333ms ease-in-out;
-  -moz-transition: all 333ms ease-in-out;
-  -o-transition: all 333ms ease-in-out;
-  -ms-transition: all 333ms ease-in-out;
-  transition: all 333ms ease-in-out;
-}
-form input[type="submit"]:hover {
-  background: #313a3d;
-  color: #fd9638;
-}
-form input[type="submit"]:focus {
-  outline: none;
-  background: #cd6302;
-}
-
     </style>
     <script>
-        // Input Lock
-$('textarea').blur(function () {
-    $('#hire textarea').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-          $this.addClass('focused');
-          $('textarea + label + span').css({'opacity': 1});
-        }
-        else {
-          $this.removeClass('focused');
-          $('textarea + label + span').css({'opacity': 0});
-        }
-    });
-});
-
-$('#hire .field:first-child input').blur(function () {
-    $('#hire .field:first-child input').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-          $this.addClass('focused');
-          $('.field:first-child input + label + span').css({'opacity': 1});
-        }
-        else {
-          $this.removeClass('focused');
-          $('.field:first-child input + label + span').css({'opacity': 0});
-        }
-    });
-});
-
-$('#hire .field:nth-child(2) input').blur(function () {
-    $('#hire .field:nth-child(2) input').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-          $this.addClass('focused');
-          $('.field:nth-child(2) input + label + span').css({'opacity': 1});
-        }
-        else {
-          $this.removeClass('focused');
-          $('.field:nth-child(2) input + label + span').css({'opacity': 0});
-        }
-    });
-});
-
-
-
-
         function toggleInfo() {
             var element = document.getElementById("opened-info");
             element.classList.toggle("opened");

@@ -1,43 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)https://subete.ucraft.net/comprar -->
-<html class="desktop " prefix="og: http://ogp.me/ns#" lang="en-us" dir="ltr" itemscope=""
-    itemtype="http://schema.org/WebSite" data-page-type="pageBlank">
+
 
 <head>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="x-default">
-    <link rel="alternate" href="https://subete.ucraft.net/comprar" hreflang="en-us">
+  
     <meta itemprop="name" content="SUBETE!">
-    <meta name="twitter:title" content="SUBETE!">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ucraftcom">
-    <meta property="og:title" content="SUBETE!">
-    <meta property="og:url" content="https://subete.ucraft.net/comprar">
-    <meta property="og:type" content="website">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/fs">
-    <link rel="dns-prefetch" href="https://static.ucraft.app/">
-    <link rel="dns-prefetch" href="https://storage.cloud.google.com/">
-    <link rel="dns-prefetch" href="https://storage.googleapis.com/">
-    <meta name="generator" content="Ucraft">
-
-    <link href="https://subete.ucraft.net/comprar" rel="canonical">
+   
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0">
     <meta name="HandheldFriendly" content="true">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="YES">
 
-    <meta name="ucraft-public/config/asset-manifest"
-        content="%7B%22bundles%22%3A%7B%22account-engine%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine-vendor.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22https%3A%2F%2Fstatic.ucraft.app%2Ffrontend-public%2Fengines-dist%2Faccount-engine%2Fassets%2Fengine.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22assets%22%3A%7B%22assets%22%3A%5B%5D%7D%7D%7D">
-    <meta name="ucraft-public/config/environment"
-        content="%7B%22modulePrefix%22%3A%22ucraft-public%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22ucraft-public%22%2C%22version%22%3A%220.0.0+f8cdc653%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-modal-dialog%22%3A%7B%7D%7D">
-    <meta name="account-engine/config/environment" content="%7B%22modulePrefix%22%3A%22account-engine%22%7D">
-    <meta name="robots" content="noindex, nofollow">
-
+   
 
     <link rel="icon" type="image/png"
-    href="./SUBETE!_files/favicon.png">
+        href="./SUBETE!_files/favicon.png">
     <link href="./SUBETE!_files/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/public.css">
     <link rel="stylesheet" type="text/css" href="./SUBETE!_files/icomoon.css" media="all"
@@ -190,9 +170,7 @@
             }
         }
     </script>
-    <link id="avast_os_ext_custom_font"
-        href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet"
-        type="text/css">
+    
 </head>
 
 <body class="">
@@ -364,16 +342,16 @@
                                                                 style="font-family: &#39;Rubik&#39;;">
                                                                 <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./index.html"
+                                                                        href="./index.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             INICIO
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page  active   show" data-anchor="">
+                                                                <li class=" page show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./COMPRAR_SUBETE!.html"
+                                                                        href="./COMPRAR_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             COMPRAR
@@ -382,19 +360,19 @@
                                                                 </li>
                                                                 <li class=" page   show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./MISVIAJES_SUBETE!.html"
+                                                                        href="./MISVIAJES_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
                                                                             MIS VIAJES
                                                                         </span>
                                                                     </a>
                                                                 </li>
-                                                                <li class=" page   show" data-anchor="">
+                                                                <li class=" page  active show" data-anchor="">
                                                                     <a class="nav-item"
-                                                                        href="./CONTACTO_SUBETE!.html"                                                                        
+                                                                        href="./CONTACTO_SUBETE!.php"
                                                                         data-page-type="pageBlank">
                                                                         <span class="title">
-                                                                            CONTACTo&nbsp; &nbsp; &nbsp;&nbsp;
+                                                                            CONTACTO&nbsp; &nbsp; &nbsp;&nbsp;
                                                                         </span>
                                                                     </a>
                                                                 </li>
@@ -415,170 +393,43 @@
                                 <div class="margin-controller"></div>
                             </div>
                         </div>
+                        <div class="main-rows">
+                                <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/school_bus.jpg);    background-repeat: no-repeat;
+                                background-size: cover;">
+                                    <div class="row-container  container ">
+                                        <div class="row mainRow" style="">
+                        <section id="hire">
+                            <h1 style="color: white;">Contactame</h1>
+                            
+                            <form>
+                                  <div class="field name-box">
+                                        <input type="text" id="name" placeholder="Quien eres?"/>
+                                        <label for="name">Nombre</label>
+                                        <span class="ss-icon">check</span>
+                                  </div>
+                        
+                                  <div class="field email-box">
+                                        <input type="text" id="email" placeholder="nombre@email.com"/>
+                                        <label for="email">Correo</label>
+                                        <span class="ss-icon">check</span>
+                                  </div>
+                        
+                                  <div class="field msg-box">
+                                        <textarea id="msg" rows="4" placeholder="Escribe tu mensaje aqui......"/></textarea>
+                                        <label for="msg">Msg</label>
+                                        <span class="ss-icon">check</span>
+                                  </div>
+                        
+                                  <input class="button" type="submit" value="Enviar" />
+                          </form>
+                        </section>
+
                     </div>
-                    <div class="main-rows">
-                        <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/1-13.jpg);    background-repeat: no-repeat;
-                        background-size: cover;">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12 col-lg-6 " datacolumn-id="37"
-                                        style="  ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="wrap" data-pos="0" style="background: #0000009e">
-                                                <div class="headbar">
-                                                    <i class="zmdi zmdi-arrow-left btnBack"></i> <span>BUSCA TU DESTINO</span>
-                                                </div>
-                                                <div class="header">
-                                                    <div class="bg"></div>
-                                                    <div class="title">
-                                                        <div class="fromPlace" style="color: black;">
-                                                            <span>T</span><span>G</span><span>U</span>
-                                                        </div>
-                                                        <span class="separator"><i class="zmdi zmdi-airplane"></i></span>
-                                                        <div class="toPlace" style="color: black;">
-                                                            <span>S</span><span>P</span><span>S</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="map"></div>
-                                                </div>
-                                        
-                                                <div class="content">
-                                                    <section style="margin:0px">
-                                                            <form>
-                                                            <div class="control select">
-                                                                <div class="control-head">
-                                                                    <div class="field name-box">
-                                                                            <input type="text" id="name" placeholder="Donde estas?"/>
-                                                                            <label for="name">DESDE</label>
-                                                                            <span class="ss-icon">check</span>
-                                                                      </div>		
-                                                                </div>
-                                                            </div>   
-                                                            <div class="control select">
-                                                                <div class="control-head">
-                                                                        <div class="field name-box">
-                                                                                <input type="text" id="name" placeholder="Donde desear viajar?"/>
-                                                                                <label for="name">HASTA</label>
-                                                                                <span class="ss-icon">check</span>
-                                                                          </div>			
-                                                                </div>
-                                                               
-                                                            </div>
-                                                            <div class="control select">
-                                                                    <div class="control-head">
-                                                                            <div class="field name-box">
-                                                                                    <input type="text" id="name" placeholder="Cuando desear viajar?"/>
-                                                                                    <label for="name">FECHA SALIDA</label>
-                                                                                    <span class="ss-icon">check</span>
-                                                                              </div>			
-                                                                    </div>
-                                                                   
-                                                                </div>
-                                                                <div class="control select">
-                                                                        <div class="control-head">
-                                                                                <div class="field name-box">
-                                                                                        <input type="text" id="name" placeholder="Cuando desear regresar?"/>
-                                                                                        <label for="name">FECHA REGRESO</label>
-                                                                                        <span class="ss-icon">check</span>
-                                                                                  </div>			
-                                                                        </div>
-                                                                       
-                                                                    </div>
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            <div class="control">
-                                                                <button class="btnSearch">BUSCAR</button>
-                                                            </div>
-                                        
-                                                        </form>
-                                                        <div class="list">
-                                                            <div class="nano">
-                                                                <div class="nano-content">
-                                                                                
-                                                                </div>
-                                                            </div>					
-                                                        </div>
-                                                        
-                                                        <div class="ticket">
-                                                            <section>
-                                                                
-                                                            </section>
-                                                            <button class="btnBook">BOOK FLIGHT</button>
-                                                            <!-- <button class="btnHome">BACK TO HOME</button> -->
-                                                            <div class="loader">Loading...</div>
-                                                        </div>
-                                        
-                                                    </section>
-                                                </div>		
-                                            
-                                            </div> 
-
-                                            
-                                            
-                                        </div>
-                                    </div>
-
-                                    <div class="column col-sm-12 col-lg-6" datacolumn-id="37"
-                                        style="  ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="wrap" data-pos="0" style="background: #0000009e">
-                                                <div class="headbar">
-                                                    <i class="zmdi zmdi-arrow-left btnBack"></i> <span>ELIGE TU RUTA</span>
-                                                </div>
-                                                
-                                        
-                                                <div class="content">
-                                                    <section style="margin:0px">
-                                                        <div class="form">
-                                                            
-                                                            
-                                                           
-                                                            
-                                                            
-                                                            <div class="control">
-                                                                <button class="btnSearch">ELEGIR Y PAGAR</button>
-                                                            </div>
-                                        
-                                                        </div>
-                                                        <div class="list">
-                                                            <div class="nano">
-                                                                <div class="nano-content">
-                                                                                
-                                                                </div>
-                                                            </div>					
-                                                        </div>
-                                                        
-                                                        <div class="ticket">
-                                                            <section>
-                                                                
-                                                            </section>
-                                                            <button class="btnBook">BOOK FLIGHT</button>
-                                                            <!-- <button class="btnHome">BACK TO HOME</button> -->
-                                                            <div class="loader">Loading...</div>
-                                                        </div>
-                                        
-                                                    </section>
-                                                </div>		
-                                            
-                                            </div> 
-
-                                            
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="push" style="height: 247.087px;"></div>
                 </div>
-                <div class="footer-rows" style="padding-bottom:;">
+            </div>
+        </div>
+                   
+                <div class="footer-rows" style="">
                     <div class="uc-row                
                                 " data-id="33"
                         style="  background:linear-gradient(180deg, rgb(240, 241, 238) 0%,rgb(50, 50, 49) 100%); ">
@@ -588,7 +439,6 @@
                                 <div class="column col-sm-12 " datacolumn-id="123" style="  padding:0vh 0vh;     ">
                                     <div class="column-container vertical-top" style=" margin-top:26.706231454006vh; ">
 
-                                       
 
                                         <div class="module-container   only-mobile   align-center ModuleTitle
                                           last " style=" padding:0 20px 15px 20px;  ">
@@ -859,27 +709,21 @@
 
 
 
-form .control{
-    height: 70px !important;
-    margin-top: 10px;
-}
-
-
-
-
-
-
         body {
   background: #efefef;
-  
+  font-size: 62.5%;
   font-family: "Lato", sans-serif;
   font-weight: 300;
   color: #b6b6b6;
 }
 body section {
- 
-  width: 100% !important;
-  
+  background: #0000009e;
+  margin: 60px auto 120px;
+  border-top: 15px solid yellow;
+  text-align: center;
+  padding: 50px 0 110px;
+  width: 80%;
+  max-width: 1100px;
 }
 body section h1 {
   margin-bottom: 40px;
@@ -889,16 +733,16 @@ body section h1 {
   font-weight: 100;
 }
 form {
+  width: 58.33333%;
+  margin: 0 auto;
 }
 form .field {
   width: 100%;
   position: relative;
   margin-bottom: 15px;
-  margin-left: 0px;
-  color: black;
-    font-weight: 500;
 }
 form .field label {
+    color: black;
   text-transform: uppercase;
   position: absolute;
   top: 0;
@@ -932,12 +776,12 @@ form .field label + span {
 }
 form .field input[type="text"], form .field textarea {
   border: none;
-  background: #1c1d21;
+  background: black;
   width: 80.5%;
   margin: 0;
   padding: 18px 0;
   padding-left: 19.5%;
-  color: white;
+  color: #313a3d;
   font-size: 1.4em;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -959,16 +803,16 @@ form .field input[type="text"]:focus#msg, form .field textarea:focus#msg, form .
 }
 form .field input[type="text"]:focus + label, form .field textarea:focus + label, form .field input[type="text"].focused + label, form .field textarea.focused + label {
   width: 18%;
-  background: yellow;
+  background: #fd9638;
   color: #313a3d;
 }
 form .field input[type="text"].focused + label, form .field textarea.focused + label {
-  color: yellow;
+  color: #fd9638;
 }
 form .field:hover label {
   width: 18%;
-  background: yellow;
-  color:black;
+  background: #313a3d;
+  color: white;
 }
 form input[type="submit"] {
   background: #fd9638;
@@ -989,7 +833,7 @@ form input[type="submit"] {
   transition: all 333ms ease-in-out;
 }
 form input[type="submit"]:hover {
-  background: yellow;
+  background: #313a3d;
   color: #fd9638;
 }
 form input[type="submit"]:focus {
@@ -999,6 +843,52 @@ form input[type="submit"]:focus {
 
     </style>
     <script>
+        // Input Lock
+$('textarea').blur(function () {
+    $('#hire textarea').each(function () {
+        $this = $(this);
+        if ( this.value != '' ) {
+          $this.addClass('focused');
+          $('textarea + label + span').css({'opacity': 1});
+        }
+        else {
+          $this.removeClass('focused');
+          $('textarea + label + span').css({'opacity': 0});
+        }
+    });
+});
+
+$('#hire .field:first-child input').blur(function () {
+    $('#hire .field:first-child input').each(function () {
+        $this = $(this);
+        if ( this.value != '' ) {
+          $this.addClass('focused');
+          $('.field:first-child input + label + span').css({'opacity': 1});
+        }
+        else {
+          $this.removeClass('focused');
+          $('.field:first-child input + label + span').css({'opacity': 0});
+        }
+    });
+});
+
+$('#hire .field:nth-child(2) input').blur(function () {
+    $('#hire .field:nth-child(2) input').each(function () {
+        $this = $(this);
+        if ( this.value != '' ) {
+          $this.addClass('focused');
+          $('.field:nth-child(2) input + label + span').css({'opacity': 1});
+        }
+        else {
+          $this.removeClass('focused');
+          $('.field:nth-child(2) input + label + span').css({'opacity': 0});
+        }
+    });
+});
+
+
+
+
         function toggleInfo() {
             var element = document.getElementById("opened-info");
             element.classList.toggle("opened");
