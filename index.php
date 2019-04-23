@@ -2,7 +2,7 @@
 
 
 <head>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik">
+<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Roboto|Rubik" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
    
@@ -403,7 +403,7 @@
                                           last " style=" padding:0px 20px 0px 20px;  ">
                                                 <div class="  module ModuleButton " datamodule-id="63">
                                                     <div class="button">
-                                                        <a class="btn btn1" href="https://subete.ucraft.net/en"
+                                                        <a class="btn btn1" href="./COMPRAR_SUBETE!.php"
                                                             target="_self" rel="">
                                                             <span class="btn-text">COMPRA YA</span>
                                                         </a>

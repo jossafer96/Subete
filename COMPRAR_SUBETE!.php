@@ -2,7 +2,7 @@
 
 
 <head>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik">
+<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Roboto|Rubik" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
   
