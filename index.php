@@ -1,1327 +1,991 @@
+<?php
+require_once("config/db.php");
+require_once("classes/Login.php");
+
+$login = new Login();
+
+if ($login->isUserLoggedIn() == true) {
+   header("location: INICIO_SUBETE!.php");
+
+} else {
+    
+    ?>
 <!DOCTYPE html>
 
+<html class="desktop " prefix="og: http://ogp.me/ns#" lang="en-us" dir="ltr" itemscope=""
+    itemtype="http://schema.org/WebSite" data-page-type="pageBlank">
 
 <head>
-<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Roboto|Rubik" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
-   
-    <meta itemprop="name" content="SUBETE!">
-   
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="YES">
-
-   
-
-    <link rel="icon" type="image/png"
-        href="./SUBETE!_files/favicon.png">
-    <link href="./SUBETE!_files/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./SUBETE!_files/public.css">
-    <link rel="stylesheet" type="text/css" href="./SUBETE!_files/icomoon.css" media="all"
-        onload="if(media!==&#39;all&#39;)media=&#39;all&#39;">
-
-
-
-
-    <script>
-        window.currentLanguage = 'en-us';
-        window.currentLanguagePrefix = 'en';
-
-        let renderCustomCodeOnClinetDomain = "";
-        window.renderCustomCodeOnClinetDomain = !renderCustomCodeOnClinetDomain ? 0 : parseInt(
-            renderCustomCodeOnClinetDomain);
-    </script>
-    <style type="text/css">
-        :root .app-container>.questions-container-banner {
-            display: none !important;
-        }
-    </style>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-        function tryToRedirectToRightLanguage(languagePrefix) {
+       $('.error-page').hide(0);
 
-            if (isCustomDomain()) {
+$('.login-button , .no-access').click(function(){
+  $('.login').slideUp(500);
+  $('.error-page').slideDown(1000);
+});
 
-                const cookies = getCookieObject();
-                var lastLanguage = languagePrefix;
-                if (!lastLanguage) {
-                    lastLanguage = getLastLanguageFromCookies(cookies);
-                }
-
-                var languagesObj = JSON.parse(window.hrefLangRelations);
-                const defaultLanguagePrefix = getDefaultLanguagePrefix();
-                const assignedLangPrefix = getAssignedLangPrefix();
-                if (languagesObj.routPrefix && languagesObj.urls.hasOwnProperty(languagesObj.routPrefix)) {
-                    if (lastLanguage !== languagesObj.routPrefix || defaultLanguagePrefix == languagesObj.routPrefix ||
-                        assignedLangPrefix === lastLanguage) {
-                        var url = languagesObj.urls[languagesObj.routPrefix];
-                        if (url === decodeURI(window.location.origin + window.location.pathname).replace(/\/$/, "")) {
-                            if (assignedLangPrefix === languagesObj.routPrefix || defaultLanguagePrefix == languagesObj
-                                .routPrefix) {
-                                url = url.replace('/' + languagesObj.routPrefix, '');
-                            }
-                        }
-
-                        setLanguageCookie(languagesObj.routPrefix, url);
-                    }
-
-                    return false;
-
-                } else {
-                    var hrefLangPrefix = '';
-
-                    for (var languageCode in languagesObj.urls) {
-                        if (lastLanguage) {
-                            if (lastLanguage === languageCode
-                                // && defaultLanguagePrefix !== lastLanguage
-                                &&
-                                languagesObj.currentPrefix !== languageCode) {
-                                window.location.replace(languagesObj.urls[languageCode]);
-                                return false;
-                            }
-                        } else {
-                            if (languagesObj.type == "2") {
-                                hrefLangPrefix = languageCode.split('-').pop();
-                            } else {
-                                hrefLangPrefix = languageCode
-                            }
-                            if (defaultLanguagePrefix !== languagesObj.detectedPrefix &&
-                                languagesObj.currentPrefix !== hrefLangPrefix) {
-                                if (hrefLangPrefix === languagesObj.detectedPrefix) {
-                                    window.location.replace(languagesObj.urls[languageCode]);
-                                    return false;
-                                } else {
-                                    for (var code in languagesObj.additionalCodes) {
-                                        var currentCode = languagesObj.additionalCodes[code];
-
-                                        currentCode.forEach(item => {
-                                            if (item.includes(`-${languagesObj.detectedPrefix}`) &&
-                                                defaultLanguagePrefix !== languagesObj.detectedPrefix &&
-                                                languagesObj.currentPrefix !== hrefLangPrefix) {
-                                                window.location.replace(languagesObj.urls[code]);
-                                                return false;
-                                            }
-                                        });
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        function getCookieObject() {
-            const cookies = document.cookie;
-
-            return cookies.split('; ').map((item) => {
-                let [key, value] = item.split('=');
-                return {
-                    [key]: value
-                };
-            });
-        }
-
-        function getLastLanguageFromCookies(cookies) {
-            let lastLanguage = null;
-
-            for (cookie of cookies) {
-                if (cookie['lastlanguage']) {
-                    lastLanguage = cookie['lastlanguage'];
-                    break;
-                }
-            }
-
-            return lastLanguage;
-        }
-
-        function isCustomDomain() {
-            return;
-        }
-
-        function getDefaultLanguagePrefix() {
-            return "en";
-        }
-
-        function getAssignedLangPrefix() {
-            return ""
-        }
-
-        function setLanguageCookie(prefix, url) {
-            var d = new Date();
-            var hour = 20;
-            d.setTime(d.getTime() + (hour * 60 * 60 * 1000));
-            var cookieExpireDate = "expires=" + d.toString();
-            document.cookie = "lastlanguage=" + prefix + ";path=/; " + cookieExpireDate;
-            if (url) {
-                window.location.replace(url);
-            }
-        }
+$('.try-again').click(function(){
+  $('.error-page').hide(0);
+  $('.login').slideDown(1000);
+});
     </script>
-    
+   <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+   <link rel="icon" type="image/png"href="./SUBETE!_files/favicon.png">
 </head>
 
-<body class="">
-    <div class="main-container">
-        <div class="main-body">
-            <div class="main-layout">
-                <div class="layers-container">
-                    <div class="layer">
-                    </div>
-                </div>
-                <div class="header-and-main-rows  " style="background: rgb(240, 240, 240); margin-bottom: -260.125px;">
-                    <div class="header-rows">
-                        <div class="uc-row header-row" data-id="26" style="  margin-bottom:0vh;  ">
-                            <div class="row-container  container ">
-                                <div class="row headerRow" style="">
-                                    <div class="column col-xs-4 " datacolumn-id="156" style="  padding:9px 0px;     ">
-                                        <div class="column-container " style="">
-                                            <div class="module-container only-mobile align-left ModuleLogo first last "
-                                                style=" padding:0px 20px 0px 0px;  ">
-                                                <div class="  module ModuleLogo " datamodule-id="166"
-                                                    style="display:block;max-width:180px;">
-                                                    <a href="https://subete.ucraft.net/">
-                                                        <img src="./SUBETE!_files/logo.png"
-                                                            alt="SUBETE!">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column col-xs-7 " datacolumn-id="46" style="  padding:9px 0px;     ">
-                                        <div class="column-container " style="">
-                                            <div class="module-container   only-mobile   align-right ModuleNavigation first last "
-                                                style=" padding:0 10px 0 20px;  ">
-                                                <div class="  module ModuleNavigation " datamodule-id="64">
-                                                    <input type="hidden" class="standard-navigation">
-                                                    <style>
-                                                        #navigation-64>.standard-view>.navigation>.page>.page-children {
-                                                            background: rgb(240, 240, 240);
-                                                        }
-
-                                                        #navigation-64>.standard-view>.navigation>.page>.page-children>.page>ul {
-                                                            background: rgb(240, 240, 240);
-                                                        }
-
-
-                                                        #navigation-64>.standard-view>.navigation>.page>.page-children {
-                                                            border-radius: 0px;
-                                                        }
-
-                                                        #navigation-64>.standard-view>.navigation>.page>.page-children>.page>ul {
-                                                            border-radius: 0px;
-                                                        }
-
-
-                                                        #navigation-64>div>ul li:hover>ul {
-                                                            display: block;
-                                                        }
-
-                                                        #navigation-64 .page a {
-                                                            color: rgb(170, 170, 170);
-                                                            font-size: 18px;
-                                                            font-weight: 500;
-                                                            letter-spacing: 0px;
-                                                            text-transform: uppercase;
-                                                        }
-
-                                                        #navigation-64>div>ul>li.page:not(:last-child) {
-                                                            margin-right: 31px;
-                                                        }
-
-                                                        #navigation-64>div>ul>li:first-child:nth-last-child(1) {}
-
-                                                        #navigation-64 li.page>a:hover,
-                                                        #navigation-64 li.page>ul.page-children>li.page a:hover,
-                                                        #navigation-64 li.page>ul.page-children>li.page>ul.page-children>li.page a:hover {
-                                                            color: rgb(53, 53, 53) !important;
-                                                        }
-
-                                                        #navigation-64 li.page>ul.page-children li.page a {
-                                                            color: #353535;
-                                                        }
-
-
-                                                        #navigation-64 li.page.active>a,
-                                                        #navigation-64 li.page>ul.page-children>li.page.active>a,
-                                                        #navigation-64 li.page>ul.page-children>li.page>ul.page-children>li.page.active>a {
-                                                            color: rgb(53, 53, 53);
-                                                        }
-
-                                                        #navigation-64 li.page.active>a:hover,
-                                                        #navigation-64 li.page>ul.page-children>li.page.active>a:hover,
-                                                        #navigation-64 li.page>ul.page-children>li.page>ul.page-children>li.page.active>a:hover {
-                                                            color: rgb(53, 53, 53) !important;
-                                                        }
-
-                                                        #navigation-64 li.page>ul.page-children:before,
-                                                        #navigation-64 li.page>ul.page-children>li.has-childes>.page-children.pagesArrows>li:first-child:before {
-                                                            color: rgb(240, 240, 240);
-                                                        }
-
-                                                        #navigation-64 li.page>ul.page-children>li.page>a {
-                                                            color: #353535;
-                                                            font-size: 14px;
-                                                        }
-
-
-                                                        #navigation-64 li.page>ul.page-children>li.page>a {
-                                                            font-weight: 600;
-                                                        }
-
-
-                                                        #navigation-64 li.page ul.page-children .page {
-                                                            padding-top: 16.5px;
-                                                            padding-bottom: 16.5px;
-                                                        }
-
-                                                        #navigation-64 li.page ul.page-children .page:last-child {
-                                                            padding-bottom: 16.5px;
-                                                        }
-
-                                                        #navigation-64 li.has-childes.page>a>.uci-dropdown-arrow-down {
-                                                            font-size: 10px;
-                                                        }
-
-                                                        #navigation-64 li.has-childes.page>.page-children.pagesArrows>.has-childes>a>.uci-dropdown-arrow-down {
-                                                            font-size: 8px;
-                                                        }
-
-                                                        #navigation-64 li.has-childes.page>.page-children li>a,
-                                                        #navigation-64 li.has-childes.page>.page-children li {
-                                                            text-align: center;
-                                                        }
-                                                    </style>
-
-                                                    <div id="navigation-64" data-nav-sub-page-scollapsible="0"
-                                                        class="navigation-inner  horizontal standard"
-                                                        data-stretch-labels="0">
-                                                        <div class="off-canvas-button icon"
-                                                            data-selector="off-canvas-64"
-                                                            style="width:25px;height:25px;">
-                                                            <svg viewBox="0 0 100.00000762939453 75.000244140625"
-                                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                <g transform="scale(1.2716659928598795)">
-                                                                    <g>
-                                                                        <g>
-                                                                            <path clip-rule="evenodd"
-                                                                                d="M81.602,44.102h-66.84c-3.256,0-5.898,2.64-5.898,5.898    s2.642,5.898,5.898,5.898h66.84c3.256,0,5.898-2.64,5.898-5.898S84.858,44.102,81.602,44.102z M81.602,67.693h-66.84    c-3.256,0-5.898,2.64-5.898,5.898c0,3.258,2.642,5.898,5.898,5.898h66.84c3.256,0,5.898-2.64,5.898-5.898    C87.5,70.333,84.858,67.693,81.602,67.693z M14.763,32.307h66.84c3.256,0,5.898-2.64,5.898-5.898c0-3.258-2.642-5.898-5.898-5.898    h-66.84c-3.256,0-5.898,2.64-5.898,5.898C8.865,29.667,11.507,32.307,14.763,32.307z"
-                                                                                transform="translate(-8.864001274108887,-20.511001586914062)">
-                                                                            </path>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-
-                                                        <div class="standard-view ">
-                                                            <ul class="navigation"
-                                                                style="font-family: &#39;Rubik&#39;;">
-                                                                <li class=" page  active   show" data-anchor="">
-                                                                    <a class="nav-item"
-                                                                        href="./index.php"
-                                                                        data-page-type="pageBlank">
-                                                                        <span class="title">
-                                                                            INICIO
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li class=" page   show" data-anchor="">
-                                                                    <a class="nav-item"
-                                                                        href="./COMPRAR_SUBETE!.php"
-                                                                        data-page-type="pageBlank">
-                                                                        <span class="title">
-                                                                            COMPRAR
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li class=" page   show" data-anchor="">
-                                                                    <a class="nav-item"
-                                                                        href="./MISVIAJES_SUBETE!.php"
-                                                                        data-page-type="pageBlank">
-                                                                        <span class="title">
-                                                                            MIS VIAJES
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li class=" page   show" data-anchor="">
-                                                                    <a class="nav-item"
-                                                                        href="./CONTACTO_SUBETE!.php"
-                                                                        data-page-type="pageBlank">
-                                                                        <span class="title">
-                                                                            CONTACTo&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="main-rows">
-                        <div class="uc-row    first" data-id="21" style="  margin-bottom:0vh;   background:; ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12 " datacolumn-id="37"
-                                        style="  padding:26.693766937669377vh 0vh;     ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="module-container  align-right ModuleTitle first  "
-                                                style=" padding:0px 20px 0px 20px;   padding-bottom:5.420054200542vh; ">
-                                                <div class="  module ModuleTitle " datamodule-id="65"
-                                                    style="display:block;max-width:316px;">
-                                                    <div class="uc-content">
-                                                        <h1 style="color:rgb(246, 255, 18);"><span
-                                                                style="font-family:baloo;"><strong>VIAJA
-                                                                    DE FORMA RÁPIDA Y SEGURA</strong></span></h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-right ModuleButton
-                                          last " style=" padding:0px 20px 0px 20px;  ">
-                                                <div class="  module ModuleButton " datamodule-id="63">
-                                                    <div class="button">
-                                                        <a class="btn btn1" href="./COMPRAR_SUBETE!.php"
-                                                            target="_self" rel="">
-                                                            <span class="btn-text">COMPRA YA</span>
-                                                        </a>
-                                                    </div>
-                                                    <style>
-                                                    </style>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                            <div class="bg-image lazy initial"
-                                data-bg="url(&#39;https://static.ucraft.app/fs/userFiles/subete/images/r21-T-WRLSsiZYE.jpg&#39;)"
-                                style="opacity: 1; background-position: 39.431% 47.688%; background-image: url(&quot;https://static.ucraft.app/fs/userFiles/subete/images/r21-T-WRLSsiZYE.jpg&quot;);"
-                                data-was-processed="true">
-                            </div>
-                        </div>
-
-                        <div class="uc-row                
-                                " data-id="25"
-                            style="  margin-bottom:13.550135501355vh;   background:radial-gradient(rgb(246, 255, 16) 0%,rgb(50, 50, 49) 100%); ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-4 " datacolumn-id="76"
-                                        style="  padding:29.45736434108527vh 0vh;     ">
-                                        <div class="column-container vertical-top"
-                                            style=" margin-top:5.7803468208092vh; ">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
-                                                <div class="  module ModuleImage " datamodule-id="75"
-                                                    style="display:block;max-width:259.984px;">
-                                                    <a class="image-module-link"
-                                                        href="https://kyotomag.ucraft.me/blog/news" target="_self"
-                                                        rel="">
-
-                                                        <div class="animated animated-75 " data-loading-animation=""
-                                                            data-animated-id="75">
-                                                            <div class="">
-                                                                <div>
-                                                                    <img class="image lazy initial loaded"
-                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/75-D2K1UZr4vxk.jpg"
-                                                                        src="./SUBETE!_files/75-D2K1UZr4vxk.jpg"
-                                                                        data-was-processed="true">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </a>
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleButton
-                                          last ">
-                                                <div class="  module ModuleButton " datamodule-id="143">
-                                                    <div class="button">
-                                                        <a class="btn buttons1530254589521"
-                                                            href="http://kyotomag.ucraft.me/blog/news" target="_self"
-                                                            rel="">
-                                                            <span class="btn-text" style="color: rgb(53, 53, 53)">BUSCA
-                                                                TU DESTINO</span>
-                                                        </a>
-                                                    </div>
-                                                    <style>
-                                                    </style>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column col-sm-4 " datacolumn-id="66"
-                                        style="  padding:29.45736434108527vh 0vh;     ">
-                                        <div class="column-container vertical-top"
-                                            style=" margin-top:4.3352601156069vh; ">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
-                                                <div class="  module ModuleImage " datamodule-id="78"
-                                                    style="display:block;max-width:239.984px;">
-                                                    <a class="image-module-link"
-                                                        href="https://kyotomag.ucraft.me/blog/events" target="_self"
-                                                        rel="">
-
-                                                        <div class="animated animated-78 " data-loading-animation=""
-                                                            data-animated-id="78">
-                                                            <div class="">
-                                                                <div>
-                                                                    <img class="image lazy initial loaded"
-                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/05201920152078-P22AFmgMuUc.jpg"
-                                                                        src="./SUBETE!_files/05201920152078-P22AFmgMuUc.jpg"
-                                                                        data-was-processed="true">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </a>
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleButton
-                                          last ">
-                                                <div class="  module ModuleButton " datamodule-id="144">
-                                                    <div class="button">
-                                                        <a class="btn buttons1530254589521"
-                                                            href="http://kyotomag.ucraft.me/blog/events" target="_self"
-                                                            rel="">
-                                                            <span class="btn-text"
-                                                                style="color: rgb(53, 53, 53)">COMPRA</span>
-                                                        </a>
-                                                    </div>
-                                                    <style>
-                                                    </style>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column col-sm-4 " datacolumn-id="56"
-                                        style="  padding:29.45736434108527vh 0vh;     ">
-                                        <div class="column-container vertical-top"
-                                            style=" margin-top:5.7803468208092vh; ">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0px 20px 0px 20px;   padding-bottom:0vh; ">
-                                                <div class="  module ModuleImage " datamodule-id="77"
-                                                    style="display:block;max-width:280px;">
-                                                    <a class="image-module-link"
-                                                        href="https://kyotomag.ucraft.me/blog/stories" target="_self"
-                                                        rel="">
-
-                                                        <div class="animated animated-77 " data-loading-animation=""
-                                                            data-animated-id="77">
-                                                            <div class="">
-                                                                <div>
-                                                                    <img class="image lazy initial loaded"
-                                                                        data-src="https://static.ucraft.app/fs/userFiles/subete/images/370288117277877-e6ZlCzBnGWI.jpg"
-                                                                        src="./SUBETE!_files/370288117277877-e6ZlCzBnGWI.jpg"
-                                                                        data-was-processed="true">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </a>
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleButton
-                                          last ">
-                                                <div class="  module ModuleButton " datamodule-id="145">
-                                                    <div class="button">
-                                                        <a class="btn buttons1530254589521"
-                                                            href="http://kyotomag.ucraft.me/blog/stories" target="_self"
-                                                            rel="">
-                                                            <span class="btn-text"
-                                                                style="color: rgb(53, 53, 53)">VIAJA</span>
-                                                        </a>
-                                                    </div>
-                                                    <style>
-                                                    </style>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row" style="bottom:-13.550135501355vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                        <div class="uc-row                
-                                " data-id="38" style="  margin-bottom:0vh;   background:; ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12 " datacolumn-id="61" style="  padding:0vh 0vh;     ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="module-container   only-mobile   align-left ModuleTitle
-                                         first   last " style=" padding:0px 20px 0px 20px;  ">
-                                                <div class="  module ModuleTitle " datamodule-id="82"
-                                                    style="display:block;max-width:552px;">
-                                                    <div class="uc-content">
-                                                        <h1 style="color:rgb(0, 0, 0);">LA MEJOR FORMA DE VIAJAR</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                        <div class="uc-row                
-                                " data-id="45" style="  margin-bottom:14.836795252226vh;  ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12 " datacolumn-id="72"
-                                        style="  padding:4.3478260869565215vh 0vh;     ">
-                                        <div class="column-container vertical-center" style="">
-
-                                            <div class="module-container  align-center ModuleParagraph
-                                         first   last ">
-                                                <div class="  module ModuleParagraph " datamodule-id="86">
-                                                    <div class="uc-content ">
-                                                        <h3 class="AlignLeft">SUBETE! te ofrece los mejores destinos,
-                                                            los mas comodos asientos y los mejores precios, desde la
-                                                            comodidad de tu casa&nbsp;</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row" style="bottom:-14.836795252226vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                        <div class="uc-row                
-                                " data-id="102" style=" ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-12 " datacolumn-id="170" style="      ">
-                                        <div class="column-container vertical-top" style="">
-
-                                            <div class="module-container  align-center ModuleTitle
-                                         first   last ">
-                                                <div class="  module ModuleTitle " datamodule-id="190">
-                                                    <div class="uc-content">
-                                                        <h3><span style="font-family:baloo;"><strong>NUESTROS
-                                                                    SERVICIOS</strong></span></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                        <div class="uc-row last uc-animation staticParallax active" data-id="100"
-                            data-effect="staticParallax" style="  margin-bottom:0vh;   background:rgb(239, 239, 239); ">
-                            <div class="row-container  container ">
-                                <div class="row mainRow" style="">
-
-                                    <div class="column col-sm-4 " datacolumn-id="166"
-                                        style="  padding:0.14836795252225518vh 0vh;     ">
-                                        <div class="column-container vertical-top" style="">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0 40px 0 40px;  ">
-                                                <div class="  module ModuleImage " datamodule-id="183"
-                                                    style="display:block;max-width:199.984375px;">
-                                                    <div class="animated animated-183 " data-loading-animation=""
-                                                        data-animated-id="183">
-                                                        <div class="">
-                                                            <div>
-                                                                <img class="image lazy loaded"
-                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/183-1190152.png"
-                                                                    src="./SUBETE!_files/183-1190152.png"
-                                                                    data-was-processed="true">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleTitle
-                                          last ">
-                                                <div class="  module ModuleTitle " datamodule-id="186">
-                                                    <div class="uc-content">
-                                                        <h3>COMPRAS ONLINE</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column col-sm-4 " datacolumn-id="167"
-                                        style="  padding:0.14836795252225518vh 0vh;     ">
-                                        <div class="column-container vertical-top"
-                                            style=" margin-top:1.4836795252226vh; ">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0px 20px 0px 20px;  ">
-                                                <div class="  module ModuleImage " datamodule-id="184"
-                                                    style="display:block;max-width:199.984375px;">
-                                                    <div class="animated animated-184 " data-loading-animation=""
-                                                        data-animated-id="184">
-                                                        <div class="">
-                                                            <div>
-                                                                <img class="image lazy loaded"
-                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/10252256184-delivery-2.png"
-                                                                    src="./SUBETE!_files/10252256184-delivery-2.png"
-                                                                    data-was-processed="true">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleTitle
-                                          last ">
-                                                <div class="  module ModuleTitle " datamodule-id="187">
-                                                    <div class="uc-content">
-                                                        <h3>ENCOMIENDAS Y PAQUETERIA</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column col-sm-4 " datacolumn-id="168"
-                                        style="  padding:0.14836795252225518vh 0vh;     ">
-                                        <div class="column-container vertical-top" style="">
-
-                                            <div class="module-container  align-center ModuleImage
-                                         first  " style=" padding:0px 40px 0px 40px;  ">
-                                                <div class="  module ModuleImage " datamodule-id="185"
-                                                    style="display:block;max-width:199.984375px;">
-                                                    <div class="animated animated-185 " data-loading-animation=""
-                                                        data-animated-id="185">
-                                                        <div class="">
-                                                            <div>
-                                                                <img class="image lazy loaded"
-                                                                    data-src="https://static.ucraft.app/fs/userFiles/subete/images/185-bus-512.png"
-                                                                    src="./SUBETE!_files/185-bus-512.png"
-                                                                    data-was-processed="true">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="module-container  align-center ModuleTitle
-                                          last ">
-                                                <div class="  module ModuleTitle " datamodule-id="188">
-                                                    <div class="uc-content">
-                                                        <h3>RESERVAS DE AUTOBUSES</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="margin-container" data-type="row" style="bottom:-0vh;">
-                                <div class="margin-controller"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="push" style="height: 260.125px;"></div>
-                </div>
-                <div class="footer-rows" style="padding-bottom: 0px;">
-                    <div class="uc-row    last              
-                                " data-id="33"
-                        style="  background:linear-gradient(180deg, rgb(240, 241, 238) 0%,rgb(50, 50, 49) 100%); ">
-                        <div class="row-container  container ">
-                            <div class="row footerRow" style="">
-
-                                <div class="column col-sm-12 " datacolumn-id="123" style="  padding:0vh 0vh;     ">
-                                    <div class="column-container vertical-top" style=" margin-top:26.706231454006vh; ">
-
-
-                                        <div class="module-container   only-mobile   align-center ModuleTitle
-                                          last " style=" padding:0 20px 15px 20px;  ">
-                                            <div class="  module ModuleTitle " datamodule-id="83">
-                                                <div class="uc-content">
-                                                    <h6 style="color:rgb(240, 240, 240);">Copyright © 2019&nbsp;</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="margin-container" data-type="row">
-                            <div class="margin-controller"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="accounts-popup">
-            <div class="loading-container">
-                <div class="loading-spinner"></div>
-            </div>
-            <iframe id="accounts-iframe" style="border: none;"
-                src="./SUBETE!_files/saved_resource.html"></iframe>
-        </div>
-    </div>
-    <div class="module-datepicker-container"></div>
-
-
-    <style>
-        @font-face {
-            font-family: 'badge_opensans';
-            src: url('/assets/fonts/Badge_OpenSans.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'lato_am';
-            src: url('/assets/fonts/Lato_VH.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        html[lang="hy-am"] .powered-by-container {
-            font-family: 'lato_am';
-
-        }
-
-        html[dir="rtl"] .powered-by-container,
-        html[dir="rtl"] .powered-by-container .powered-by-left-section,
-        html[dir="rtl"] .powered-by-container .powered-by-left-section .info-created,
-        html[dir="rtl"] .powered-by-container .powered-by-right-section .opened-info,
-        html[dir="rtl"] .powered-by-container .powered-by-right-section {
-            flex-direction: row-reverse;
-        }
-
-        html[dir="rtl"] .powered-by-container .powered-by-right-section span {
-            text-align: left;
-        }
-
-        .powered-by-container {
-            font-family: 'badge_opensans', sans-serif;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            z-index: 9999;
-            background: #161E33;
-            display: flex;
-            align-items: center;
-            min-height: 48px;
-            padding: 0 24px;
-
-        }
-
-        .powered-by-container .powered-by-right-section {
-            flex: 1;
-            justify-content: flex-end;
-            margin-left: 24px;
-        }
-
-        .powered-by-container .powered-by-left-section .line-divider,
-        .powered-by-container .powered-by-right-section .line-divider {
-            min-height: 24px;
-            height: 100%;
-            width: 1px;
-            background: #576180;
-            margin: 6px 24px;
-        }
-
-        .powered-by-container .powered-by-left-section,
-        .powered-by-container .powered-by-right-section,
-        .powered-by-right-section .opened-info,
-        .powered-by-container .powered-by-left-section .info-created {
-            display: flex;
-            align-items: center;
-        }
-
-        .powered-by-left-section .created-btn {
-            text-transform: uppercase;
-            height: 24px;
-            line-height: 24px;
-            padding: 0 13px;
-            font-size: 10px;
-            color: #fff;
-            border-radius: 20px;
-            background: #4FA36D;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            border: none;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background .3s;
-        }
-
-        .powered-by-left-section .created-btn:hover {
-            background: #408368;
-        }
-
-        .powered-by-left-section .info-created span {
-            font-size: 12px;
-            line-height: 16px;
-            color: #fff;
-            font-weight: 500;
-            margin-right: 12px;
-        }
-
-        .powered-by-left-section .info-created img {
-            width: 85px;
-            margin-bottom: 6px;
-        }
-
-        .powered-by-right-section .opened-info {
-            -webkit-transition: all .35s;
-            transition: all .35s;
-            -webkit-transform: translate3d(calc(100% - 48px), 0, 0);
-            transform: translate3d(calc(100% - 24px), 0, 0);
-        }
-
-        .powered-by-right-section .opened-info.opened {
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        .powered-by-right-section .opened-info.opened .round-arrow {
-            transform: rotate(180deg);
-        }
-
-        .powered-by-right-section .opened-info .round-arrow {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            min-height: 24px;
-            background: #3D4766;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all .35s;
-        }
-
-        .powered-by-right-section .opened-info .round-arrow i {
-            font-size: 24px;
-            color: #ABB4CC;
-        }
-
-        .powered-by-right-section .opened-info span {
-            font-size: 12px;
-            line-height: 16px;
-            color: #fff;
-            font-weight: 500;
-            max-width: 650px;
-        }
-
-        .powered-by-right-section .opened-info span a {
-            font-weight: bold;
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        @media only screen and (max-width: 991px) {
-            .powered-by-container {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0 16px 30px;
-            }
-
-            .powered-by-container .powered-by-left-section,
-            .powered-by-container .powered-by-right-section {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .powered-by-container .line-divider {
-                display: none;
-            }
-
-            .powered-by-container .powered-by-right-section {
-                margin-left: 0;
-            }
-
-            .powered-by-container .powered-by-left-section .info-created {
-                padding: 13px 0;
-                max-width: 265px;
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info {
-                -webkit-transform: none;
-                transform: none;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height .33s ease-out;
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info.opened {
-                max-height: 120px;
-                overflow: visible;
-
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info span {
-                padding-top: 15px;
-                opacity: 0;
-                transition: opacity .55s ease-out;
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info.opened span {
-                opacity: 1;
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info .round-arrow {
-                position: absolute;
-                right: 8px;
-                top: 8px;
-                transform: rotate(90deg);
-            }
-
-            .powered-by-container .powered-by-right-section .opened-info.opened .round-arrow {
-                transform: rotate(270deg);
-            }
-
-            html[lang="hy-am"] .powered-by-container {
-                font-family: 'lato_am';
-
-            }
-
-            html[dir="rtl"] .powered-by-container,
-            html[dir="rtl"] .powered-by-container .powered-by-left-section {
-                flex-direction: column !important;
-                align-items: flex-end !important;
-            }
-
-            html[dir="rtl"] .powered-by-container .powered-by-right-section span {
-                text-align: left;
-            }
-        }
-    </style>
-    <script>
-        function toggleInfo() {
-            var element = document.getElementById("opened-info");
-            element.classList.toggle("opened");
-        }
-
-        function openIframe() {
-            window.addEventListener("message", receiveMessage, false);
-            var element = document.querySelector(".accounts-popup .loading-container");
-            var iframeElement = document.getElementById("accounts-iframe");
-            var popupElement = document.querySelector(".accounts-popup");
-
-            element.classList.add("show");
-            document.body.classList.add('no-scroll');
-            document.getElementsByTagName('html')[0].classList.add('no-scroll');
-            popupElement.classList.add("show");
-            window.location.hash = '#get-started';
-            iframeElement.setAttribute("src", window.accountsUrl + '?locale=' + window.currentLanguagePrefix +
-                "#/wizard/choose-package?animate=false");
-
-            function receiveMessage(event) {
-                switch (event.data.action) {
-                    case 'close':
-                        popupElement.classList.remove("show");
-                        window.location.hash = '/';
-                        document.body.classList.remove('no-scroll');
-                        document.getElementsByTagName('html')[0].classList.remove('no-scroll');
-
-                        iframeElement.setAttribute("src", "");
-
-                        if (window.accountSystemLanguage !== null) {
-                            tryToRedirectToRightLanguage(window.accountSystemLanguage);
-                        }
-                        break;
-                    case 'redirect':
-                        window.open(event.data.url, '_blank');
-                        popupElement.classList.remove("show");
-                        window.location.hash = '/';
-                        document.body.classList.remove('no-scroll');
-                        document.getElementsByTagName('html')[0].classList.remove('no-scroll');
-                        iframeElement.setAttribute("src", "");
-                        break;
-                    case 'reload':
-                        window.location.reload();
-                        break;
-                    case 'loaded':
-                        element.classList.remove("show");
-                        break;
-                }
-            }
-        }
-
-        window.addEventListener('load', function () {
-            var badgeElement = document.querySelector(".powered-by-container");
-
-            if (badgeElement) {
-                var badgeHeight = badgeElement.getBoundingClientRect().height;
-
-                var lastBlock = document.querySelector(".main-layout > div:last-child");
-                var offCanvas = document.querySelector(".off-canvas > .off-canvas-scroll-container");
-
-                if (lastBlock) {
-                    lastBlock.style.paddingBottom = badgeHeight + 'px';
-                }
-
-                if (offCanvas) {
-                    offCanvas.style.paddingBottom = badgeHeight + 'px';
-                }
-            }
-
-            if (window.location.hash.trim() == "#get-started") {
-                openIframe();
-            }
-        });
-    </script>
+<body class="" style="">
     
-    <!-- Html -->
-
-
-    <!-- Auth token -->
-    <script type="text/javascript">
-        var page = {
-            "id": 1,
-            "title": "INICIO",
-            "alias": "inicio",
-            "component": null,
-            "type": "pageBlank",
-            "target": 0,
-            "homepage": 1,
-            "isHeading": 0,
-            "isHidden": 0,
-            "externalUrl": "",
-            "navigationId": 0,
-            "parentPageId": null,
-            "ordering": 1,
-            "languageId": 1,
-            "langRefId": 1,
-            "params": "{\"margin\":1.8500000000000001,\"bodyBackgroundColor\":\"rgb(240, 240, 240)\"}",
-            "seoParams": {
-                "pageTitle": "Title of your homepage",
-                "description": "",
-                "image": "",
-                "state": 0
-            },
-            "margin": 1.85,
-            "bodyBackgroundColor": "rgb(240, 240, 240)",
-            "seo": {
-                "pageTitle": "Title of your homepage",
-                "description": "",
-                "image": "",
-                "state": 0
-            },
-            "exists": 1,
-            "url": "https:\/\/subete.ucraft.net",
-            "current": 1,
-            "visibility": [2, 3, 4]
-        };
-        var currentLanguageObject = {
-            "id": 1,
-            "title": "English",
-            "language": "en-us",
-            "prefix": "en",
-            "region": "United States",
-            "flag": "us.png",
-            "default": 1,
-            "published": 1,
-            "updated_at": "2015-11-23 00:00:00",
-            "created_at": "2015-11-23 00:00:00",
-            "deleted_at": "1970-01-01 12:00:00"
-        };
-        var isTablet = 0;
-        var isMobile = 0;
-        var ucraftWebsiteElementsDisabled = 1;
-        var printElementsEnabled = 0;
-        var siteArchiverEnabled = 0;
-        var croppedUrlPrefix = "https:\/\/static.ucraft.app\/fs\/userFiles\/subete\/images\/";
-        var userFilesUrl = "https:\/\/static.ucraft.app\/fs\/userFiles\/subete\/";
-        var accountsUrl = "https:\/\/accounts.ucraft.net";
-        var accountsIframeUrl = "https:\/\/accounts.ucraft.com";
-        var currency = "USD";
-        var helpUrl = "https:\/\/support.ucraft.com";
-        var websiteUrl = "https:\/\/www.ucraft.com";
-        var publicAddonsAssetsUrl = "\/frontend-public\/";
-        var publicUser = null;
-        var staticUrl = "https:\/\/static.ucraft.app";
-        var hasEcommerce = false;
-        var hasFlights = false;
-        var translations = {
-            "validation.requiredField": "This field is required",
-            "validation.invalidEmail": "This is not a valid e-mail address",
-            "validation.characterRequired": "The minimum number of characters is",
-            "validation.characterAllowed": "The maximum number of characters is",
-            "validation.wordsRequired": "The minimum number of words is",
-            "validation.wordsAllowed": "The maximum number of words is",
-            "validation.invalidUrl": "This is not a valid URL",
-            "validation.passwordCompare": "Password and the Verification don`t match",
-            "validation.promoCodeCompare": "This is not a valid Coupon Code ",
-            "validation.invalidNumber": "This is not a valid number",
-            "validation.greaterThanNumber": "Value should be greater than",
-            "validation.greaterLowerThanNumber": "Value should be greater lower",
-            "validation.alias": "The alias may only contain letters, numbers, and dashes",
-            "validation.fileIsBig": "The file you are uploading is too big.",
-            "validation.invalidFileType": "Type of the file you are uploading is not a supported.",
-            "validation.invalidDate": "Invalid date",
-            "validation.invalidDateFormat": "The date doesn\u2019t match with the correct date format=> dd\/mm\/yyyy",
-            "validation.reCaptchaUnexpectedError": "The Invisible reCAPTCHA error.",
-            "validation.missingInputSecret": "The Invisible reCAPTCHA Secret Key is missing.",
-            "validation.invalidInputSecret": "The Invisible reCAPTCHA Secret Key is invalid.",
-            "validation.missingInputResponse": "The Invisible reCAPTCHA response parameter is missing.",
-            "validation.invalidInputResponse": "The Invisible reCAPTCHA response parameter is invalid.",
-            "validation.badRequest": "The Invisible reCAPTCHA request is invalid.",
-            "validation.enableSslMessage": "Submitting this form is not possible, as the SSL has been enabled on your domain, but not on your website yet. To successfully submit the form you need to enable SSL in your domain configuration."
-        };
-
-        var styleSheetUrls = [];
-        var _token = 'XlbuT7avBYfqnmEqnXeE5Iwuhqx8ygdlhVwbbXNL';
-        var editUrl = 'https://subete.ucraft.net';
-        var baseUrl = 'https://subete.ucraft.net';
-        var apiPrefix = 'api';
-        var publicApiPrefix = 'papi';
-        var publicRestPrefix = 'prest';
-        var pageId = '1';
-        var siteInfo = {
-            domain: ''
-        };
-        var googleMapKey = 'AIzaSyCOt5KmGHnyjT3QwpXk9z0QTkT06FpjWHY';
-        <!-- lazy load css -->
-        var ll = function (styleSheetUrls) {
-            styleSheetUrls.forEach(function (el) {
-                var l = document.createElement('link');
-                l.rel = 'stylesheet';
-                l.href = el;
-                var h = document.getElementsByTagName('head')[0];
-                h.appendChild(l);
-            });
-        };
-
-        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame ||
-            msRequestAnimationFrame;
-
-        if (raf) {
-            raf(function () {
-                ll(styleSheetUrls)
-            });
-        } else {
-            window.addEventListener('load', function () {
-                ll(styleSheetUrls)
-            });
-        }
-    </script>
-
-    <!-- jQuery minified -->
-    <script src="./SUBETE!_files/jquery-3.2.1.min.js.descarga"></script>
-
-    <!-- public assets js, all lib js files concated and minified -->
-    <script src="./SUBETE!_files/publicAssets.js.descarga"></script>
-
-    <!-- public js and admin js mix -->
-
-
-    <!-- public js, all modules and apps public js concated and minified -->
-    <script src="./SUBETE!_files/public.js.descarga"></script>
-
-    <!-- Scripts -->
-
-    <!-- Inline Scripts -->
 
 
 
+      <div class="main-wrapper">
+        <div class="text-title">
+               
+            <div class="login">
+                    <img src="./SUBETE!_files/logo.png" style="max-width:80%;width:auto;height:auto;">
+                <h1 style="
+                margin: 10px;
+                font-size: 35px;-webkit-text-stroke: 1px yellow;
+            ">INGRESA</h1>
+                    <form method="post" accept-charset="utf-8" action="index.php" name="loginform" autocomplete="off" role="form" class="form-signin">
+                    <?php
+				// show potential errors / feedback (from login object)
+				if (isset($login)) {
+					if ($login->errors) {
+						?>
+						<div class="alert alert-danger alert-dismissible" role="alert" style="font-size: 30px;">
+						    <strong>Error!</strong> 
+						
+						<?php 
+						foreach ($login->errors as $error) {
+							echo $error;
+						}
+						?>
+						</div>
+						<?php
+					}
+					if ($login->messages) {
+						?>
+						<div class="alert alert-success alert-dismissible" role="alert" style="font-size: 30px;">
+						    <strong>Aviso!</strong>
+						<?php
+						foreach ($login->messages as $message) {
+							echo $message;
+						}
+						?>
+						</div> 
+						<?php 
+					}
+				}
+				?>
+                            <div class="field name-box">
+                                  <input type="text" id="name_usuario" placeholder="Nombre de usuario" name="name_usuario" type="text" value="" autofocus="" required/ >
+                                  <label for="name">Usuario</label>
+                                  
+                            </div>
+                  
+                            <div class="field email-box">
+                                  <input type="password" id="password" placeholder="********" name="password" type="password" value="" autocomplete="off" required/>
+                                  <label for="email">Contraseña</label>
+                                  
+                            </div>
+                  
+                           
+                  
+                            <input class="button" type="submit" value="Acceder" name="login" id="submit" />
+                            <input class="button" value="Crear Cuenta" type="button" onclick="window.location='login_form.php';"/>
+                    </form>
+              </div>  
+        </div>	
+      <div class="bus-wrapper">
+        <div class="window-section">
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="seats"></div>
+            </div>
+          </div>
+          <div class="window-glass">
+            <div class="glass-inner">
+               <div class="seats first"></div>
+               <div class="seats second"></div>
+            </div>
+          </div>
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="seats first"></div>
+              <div class="seats second"></div>
+            </div>
+          </div>
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="seats first"></div>
+              <div class="seats second"></div>
+            </div>
+          </div>
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="seats first"></div>
+              <div class="seats second"></div>
+            </div>
+          </div>
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="seats first"></div>
+              <div class="seats second"></div>
+            </div>
+          </div>  
+        </div> 
+        <div class="driver-section">
+          <div class="window-glass">
+            <div class="glass-inner">
+              <div class="handle"></div>
+            </div>
+          </div>
+        </div>  
+        <div class="headlight-wrap">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="door-lower">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>  
+        <div class="lower-shape"></div>
+        <div class="sticker-wrap">
+          <img src="./SUBETE!_files/logo.png" style="width: 152px;margin-right: 12rem;" >
+        </div> 
+        <div class="border-wrap">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>  
+        <div class="tyres-wrapper">
+          <div class="tyres-content">
+            <div class="tyres">
+            <div class="rim-section">
+              <div class="stripe"></div>
+            </div>          
+          </div>
+          </div>
+          <div class="tyres-content">        
+            <div class="tyres">
+              <div class="rim-section">
+                <div class="stripe"></div>
+              </div>          
+            </div> 
+          </div>
+        </div>
+        <div class="lights-wrap">
+          <div class="lights-1"></div> 
+          <div class="lights lights-2"></div>
+          <div class="lights lights-3"></div>
+          <div class="lights lights-4"></div>
+          <div class="lights lights-5"></div>
+        </div> 
+        <div class="square-1"></div>
+        <div class="square-2">
+          <div></div>
+        </div>
+        <div class="square-3">
+          <div></div>
+        </div>
+      </div> 
+      <div class="shadow"></div>
+      <div class="road">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>  
 
 
-    <script>
-    </script>
+<style>
+
+    
+body {
+    background:url(./SUBETE!_files/background.jpg);
+  margin:0px;
+  font-family: 'Ubuntu', sans-serif;
+	background-size: 100% 110%;
+}
+h1, h2, h3, h4, h5, h6, a {
+  margin:0; padding:0;
+}
+.login {
+  margin:0 auto;
+  max-width:500px;
+}
+.login-header {
+  color:#fff;
+  text-align:center;
+  font-size:300%;
+}
+/* .login-header h1 {
+   text-shadow: 0px 5px 15px #000; */
+}
+.login-form {
+  border:.5px solid #fff;
+  background:#4facff;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+}
+.login-form h3 {
+  text-align:left;
+  margin-left:40px;
+  color:#fff;
+}
+.login-form {
+  box-sizing:border-box;
+  padding-top:15px;
+  text-align:center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+  max-width:400px;
+	width: 80%;
+  line-height:3em;
+  font-family: 'Ubuntu', sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+}
+.login-form input[type="button"] {
+  height:30px;
+  width:100px;
+  background:#fff;
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: slategrey;
+  text-transform:uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor:pointer;
+}
+.sign-up{
+  color:#f2f2f2;
+  margin-left:-70%;
+  cursor:pointer;
+  text-decoration:underline;
+}
+.no-access {
+  color:#E86850;
+  margin:20px 0px 20px -57%;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.try-again {
+  color:#f2f2f2;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+  .login-form h3 {
+    text-align:center;
+    margin:0;
+  }
+  .sign-up, .no-access {
+    margin:10px 0;
+  }
+  .login-button {
+    margin-bottom:10px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.text-title {
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: 25px;
+}
+.bus-wrapper {
+  background: yellow;
+  max-width: 700px;
+  height: 205px;
+  border-radius: 4px;
+  margin: 10px auto 0;
+  position: relative;
+  animation: bus-bounce 0.75s linear infinite;
+}
+.bus-wrapper:before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-top: 103px solid transparent;
+  border-bottom: 103px solid transparent;
+  border-right: 12px solid yellow;
+}
+.bus-wrapper:after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 163px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 18px solid yellow;
+}
+.lower-shape {
+  position: absolute;
+  width: 0;
+  left: -22px;
+  height: 0;
+  bottom: 0;
+  border-left: 20px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+}
+.window-section {
+  width: 607px;
+  height: 80px;
+  display: inline-block;
+  border-radius: 6px;
+  background: #2e4148;
+  margin-top: 15px;
+  margin-left: 24px;
+  padding-left: 21px;
+}
+.window-glass {
+  width: 95px;
+  height: 58px;
+  background: #30b0c9;
+  margin-right: 10px;
+  border-radius: 4px;
+  margin: 11px 10px 11px 0;
+  float: left;
+  overflow: hidden;
+}
+.window-glass:nth-child(1) {
+  width: 50px;
+}
+.window-glass:nth-child(2) .glass-inner .seats.second, .window-glass:nth-child(3) .glass-inner .seats.second, .window-glass:nth-child(4) .glass-inner .seats.second {
+  left: 45px;
+}
+.window-glass:nth-child(4) .glass-inner {
+  margin-left: 0;
+}
+.window-glass:nth-child(5) .glass-inner {
+  margin-left: -8px;
+}
+.window-glass:nth-child(5) .glass-inner .seats.first {
+  left: 15px;
+}
+.window-glass:nth-child(5) .glass-inner .seats.second {
+  left: 50px;
+}
+.window-glass:nth-child(6) .glass-inner {
+  margin-left: -15px;
+}
+.window-glass:nth-child(6) .glass-inner .seats.first {
+  left: 25px;
+}
+.window-glass:nth-child(6) .glass-inner .seats.second {
+  display: none;
+}
+.glass-inner {
+  width: 95px;
+  height: 58px;
+  background: #59bfd3;
+  margin-top: 11px;
+  margin-left: 15px;
+  border-radius: 4px;
+  position: relative;
+}
+.seats {
+  width: 9px;
+  height: 13px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(9deg);
+  border-radius: 2px;
+  position: absolute;
+  bottom: 10px;
+  left: 6px;
+}
+.tyres-wrapper {
+  position: relative;
+  top: 40%;
+}
+.tyres-wrapper .tyres-content:nth-child(1) {
+  position: absolute;
+  left: 28%;
+  position: absolute;
+  bottom: -65px;
+  left: 27%;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background: rgb(0, 0, 0);
+  padding: 10px;
+}
+.tyres-wrapper .tyres-content:nth-child(2) {
+  position: absolute;
+  bottom: -65px;
+  right: 9%;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background: rgb(0, 0, 0);
+  padding: 10px;
+}
+.tyres {
+  position: relative;
+  z-index: 1;
+  width: 73px;
+  height: 73px;
+  background: #4e5066;
+  border-radius: 50%;
+  border: 8px solid #3a3e4b;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  animation: stripe 1s linear infinite;
+}
+.rim-section {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #505350;
+  border-radius: 50%;
+  border: 11px solid black;
+}
+.stripe {
+  width: 25px;
+  position: absolute;
+  height: 25px;
+  border: 2px dashed #4e5066;
+  border-radius: 50%;
+  top: -6px;
+  left: -6px;
+  animation: stripe 1s linear infinite;
+}
+.sticker-wrap {
+  position: absolute;
+  right: 80px;
+  top: 110px;
+  z-index: 1;
+}
+.border-wrap {
+  position: absolute;
+  bottom: 18px;
+  left: 30px;
+}
+.border-wrap > span {
+  width: 543px;
+  height: 4px;
+  background: rgb(0, 0, 0);
+  display: block;
+  margin-bottom: 3px;
+}
+.border-wrap > span:last-child {
+  margin-bottom: 0;
+}
+.driver-section {
+  background: #2e4148;
+  overflow: visible;
+  width: 70px;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  padding-right: 0;
+}
+.driver-section:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 15px;
+  height: calc(100% + -2px);
+  background: #2e4148;
+  float: right;
+  right: -6px;
+  top: 2px;
+  z-index: 10;
+  -ms-transform: skew(-30deg, 0deg);
+  -webkit-transform: skew(-30deg, 0deg);
+  transform: skew(7deg, 0deg);
+}
+.driver-section .window-glass {
+  width: 60px;
+}
+.driver-section .glass-inner {
+  margin-left: -57px;
+  margin-top: -5px;
+  height: 70px;
+  transform: skewX(8deg);
+}
+.driver-section .handle {
+  width: 30px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(-20deg);
+  border-radius: 2px;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+.door-lower {
+  width: 82px;
+  height: 48px;
+  position: absolute;
+  border: 4px solid #2e4148;
+  top: 110px;
+  right: -7px;
+  z-index: 1;
+  border-radius: 4px;
+}
+.door-lower .dot1 {
+  width: 10px;
+  height: 4px;
+  background: #3a3e4b;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 7px;
+}
+.door-lower .dot2 {
+  width: 20px;
+  height: 20px;
+  background: #3a3e4b;
+  float: right;
+  margin-right: 7px;
+  border-radius: 2px;
+  margin-top: -3px;
+}
+.lights-wrap .lights-1 {
+  background: #cc8460;
+  box-shadow: 1px 2px 0px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  width: 8px;
+  height: 28px;
+  position: absolute;
+  bottom: 43px;
+  left: -5px;
+  animation: changeColor 0.5s infinite;
+}
+.lights-wrap .lights {
+  background: #cc8460;
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 8px;
+  height: 3px;
+  position: absolute;
+  bottom: 43px;
+  z-index: 1;
+  animation: changeColor 0.5s infinite;
+}
+.lights-wrap .lights.lights-2 {
+  left: 50px;
+}
+.lights-wrap .lights.lights-3 {
+  left: 189px;
+}
+.lights-wrap .lights.lights-4 {
+  left: 395px;
+}
+.lights-wrap .lights.lights-5 {
+  right: 165px;
+}
+.square-1 {
+  background: #dedede;
+  border: 2px solid #2e4148;
+  box-shadow: inset 2px 6px 2px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 50px;
+  top: 105px;
+}
+.square-2 {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(58, 62, 75, 0.1);
+  border-radius: 6px;
+  padding: 0px;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 5px;
+  bottom: 21px;
+}
+.square-2 > div {
+  width: 12px;
+  height: 10px;
+  background: #3a3e4b;
+  display: inline-block;
+  border-radius: 1px;
+}
+.square-3 {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(58, 62, 75, 0.1);
+  border-radius: 6px;
+  padding: 0px;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 35px;
+  bottom: 5px;
+}
+.square-3 > div {
+  width: 12px;
+  height: 10px;
+  background: #3a3e4b;
+  display: inline-block;
+  border-radius: 1px;
+}
+.shadow {
+  background: #000000;
+  border-radius: 8px;
+  width: 663px;
+  height: 14px;
+  margin: 25px auto 0;
+  position: relative;
+}
+.headlight-wrap {
+  position: absolute;
+  right: -17px;
+  bottom: 66px;
+  z-index: 1;
+}
+.headlight-wrap > span {
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  margin-bottom: 1px;
+}
+.road {
+  width: 200%;
+  margin-top: -7px;
+  position: relative;
+  z-index: 1;
+  animation: mov-road 3s linear infinite;
+  overflow: hidden;
+}
+.road .line {
+  float: left;
+}
+.road .line:nth-child(1) {
+  width: 10px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-left: 80px;
+  margin-right: 20px;
+}
+.road .line:nth-child(2) {
+  width: 20px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-right: 150px;
+}
+.road .line:nth-child(3) {
+  width: 200px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-right: 80px;
+}
+.road .line:nth-child(4) {
+  width: 200px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-right: 180px;
+}
+.road .line:nth-child(5) {
+  width: 150px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-right: 300px;
+}
+.road .line:nth-child(6) {
+  width: 200px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+}
+.road .line:nth-child(7) {
+  width: 10px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-left: 80px;
+  margin-right: 20px;
+}
+.road .line:nth-child(8) {
+  width: 20px;
+  height: 6px;
+  background: yellow;
+  border-radius: 4px;
+  margin-right: 150px;
+}
+@keyframes changeColor {
+  0% {
+    background-color: #cc8460;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    background-color: #ffc107;
+  }
+}
+@keyframes stripe {
+  0% {
+    -moz-transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+  }
+  0% {
+    -moz-transform: rotateZ(180deg);
+    -webkit-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+  }
+  100% {
+    -moz-transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -o-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+  }
+}
+@keyframes bus-bounce {
+  0% {
+    top: 2px;
+  }
+  20% {
+    top: 1px;
+  }
+  40% {
+    top: 2px;
+  }
+  75% {
+    top: 0px;
+  }
+  100% {
+    top: 2px;
+  }
+}
+@keyframes mov-road {
+  0% {
+    left: 1500px;
+  }
+  100% {
+    left: -1500px;
+  }
+}
 
 
+
+
+body {
+  
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  
+}
+body section {
+ 
+ width: 100% !important;
+ 
+}
+body section h1 {
+ margin-bottom: 40px;
+ font-size: 4em;
+ text-transform: uppercase;
+ font-family: "Lato", sans-serif;
+ font-weight: 100;
+}
+form {
+}
+form .field {
+ width: 100%;
+ position: relative;
+ margin-bottom: 15px;
+ margin-left: 0px;
+ color: black;
+   font-weight: 500;
+}
+form .field label {
+ 
+ position: absolute;
+ top: 0;
+ left: 0;
+ background: yellow;
+ width: 25%;
+ padding: 18px 0;
+ font-size: 1.45em;
+ letter-spacing: 0.075em;
+ -webkit-transition: all 333ms ease-in-out;
+ -moz-transition: all 333ms ease-in-out;
+ -o-transition: all 333ms ease-in-out;
+ -ms-transition: all 333ms ease-in-out;
+ transition: all 333ms ease-in-out;
+}
+form .field label + span {
+ font-family: "SSStandard";
+ opacity: 0;
+ color: white;
+ display: block;
+ position: absolute;
+ top: 12px;
+ left: 7%;
+ font-size: 2.5em;
+ text-shadow: 1px 2px 0 #cd6302;
+ -webkit-transition: all 333ms ease-in-out;
+ -moz-transition: all 333ms ease-in-out;
+ -o-transition: all 333ms ease-in-out;
+ -ms-transition: all 333ms ease-in-out;
+ transition: all 333ms ease-in-out;
+}
+form .field input[type="text"], form .field textarea {
+ border: none;
+ background: #1c1d21;
+ width: 80.5%;
+ margin: 0;
+ padding: 6px 0;
+ padding-left: 19.5%;
+ color: white;
+ font-size: 1.4em;
+ letter-spacing: 0.05em;
+ 
+}
+form .field input[type="password"], form .field textarea {
+ border: none;
+ background: #1c1d21;
+ width: 80.5%;
+ margin: 0;
+ padding: 6px 0;
+ padding-left: 19.5%;
+ color: white;
+ font-size: 1.4em;
+ letter-spacing: 0.05em;
+ 
+}
+form .field input[type="text"]#msg, form .field textarea#msg {
+ height: 18px;
+ resize: none;
+ -webkit-transition: all 333ms ease-in-out;
+ -moz-transition: all 333ms ease-in-out;
+ -o-transition: all 333ms ease-in-out;
+ -ms-transition: all 333ms ease-in-out;
+ transition: all 333ms ease-in-out;
+}
+form .field input[type="text"]:focus, form .field textarea:focus, form .field input[type="text"].focused, form .field textarea.focused {
+ outline: none;
+}
+form .field input[type="text"]:focus#msg, form .field textarea:focus#msg, form .field input[type="text"].focused#msg, form .field textarea.focused#msg {
+ padding-bottom: 150px;
+}
+form .field input[type="text"]:focus + label, form .field textarea:focus + label, form .field input[type="text"].focused + label, form .field textarea.focused + label {
+ width: 18%;
+ background: yellow;
+ color: #313a3d;
+}
+form .field input[type="text"].focused + label, form .field textarea.focused + label {
+ color: yellow;
+}
+form .field:hover label {
+ width: 18%;
+ background: yellow;
+ color:black;
+}
+form input[type="submit"] {
+ background: #fd9638;
+ color: white;
+ -webkit-appearance: none;
+ border: none;
+ text-transform: uppercase;
+ position: relative;
+ padding: 13px 50px;
+ font-size: 1.4em;
+ letter-spacing: 0.1em;
+ font-family: "Lato", sans-serif;
+ font-weight: 300;
+ -webkit-transition: all 333ms ease-in-out;
+ -moz-transition: all 333ms ease-in-out;
+ -o-transition: all 333ms ease-in-out;
+ -ms-transition: all 333ms ease-in-out;
+ transition: all 333ms ease-in-out;
+}
+form input[type="button"] {
+ background: #fd9638;
+ color: white;
+ -webkit-appearance: none;
+ border: none;
+ text-transform: uppercase;
+ position: relative;
+ padding: 13px 50px;
+ font-size: 1.4em;
+ letter-spacing: 0.1em;
+ font-family: "Lato", sans-serif;
+ font-weight: 300;
+ -webkit-transition: all 333ms ease-in-out;
+ -moz-transition: all 333ms ease-in-out;
+ -o-transition: all 333ms ease-in-out;
+ -ms-transition: all 333ms ease-in-out;
+ transition: all 333ms ease-in-out;
+}
+form input[type="submit"]:hover {
+ background: yellow;
+ color: #fd9638;
+}
+form input[type="button"]:hover {
+ background: yellow;
+ color: #fd9638;
+}
+form input[type="submit"]:focus {
+ outline: none;
+ background: #cd6302;
+}
+
+form .control{
+    height: 70px !important;
+    margin-top: 10px;
+}
+
+
+</style>
 
 
 
 </body>
 
 </html>
+
+<?php
+}
+?>

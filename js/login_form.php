@@ -48,13 +48,6 @@
           <div class="input-group input-group-icon"><input type="text" id="name_usuario" name="name_usuario" placeholder="Nombre" required />
               
           </div>
-
-           <div class="input-group input-group-icon"><input type="text" id="apellido_usuario" name="apellido_usuario" placeholder="Apellido" required /> 
-      		</div>
-
-           <div class="input-group input-group-icon"><input type="text" id="identidad_usuario" name="identidad_usuario" placeholder="Numero de identidad" required /> 
-      		</div>
-
           <div class="input-group input-group-icon"><input type="email" id="correo_usuario" name="correo_usuario" placeholder="Correo" required />
              
           </div>
@@ -79,11 +72,21 @@
           </div>
       </div>
       <div class="row">
-      	<div class="input-group input-group-icon"><input type="text" id="telefono_usuario" name="telefono_usuario" placeholder="Telefono" required /> 
-      		</div>
-
-         
-          
+          <h4>Detalle de Pago</h4>
+          <div class="input-group"><input type="radio" name="payment-method" value="card" id="payment-method-card" checked="true" /><label for="payment-method-card"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label><input type="radio" name="payment-method" value="paypal"
+                  id="payment-method-paypal" /><label for="payment-method-paypal"> <span><i class="fa fa-cc-paypal"></i>Paypal</span></label></div>
+          <div class="input-group input-group-icon"><input type="text" placeholder="Card Number" />
+             
+          </div>
+          <div class="col-half">
+              <div class="input-group input-group-icon"><input type="text" placeholder="Card CVC" />
+                 
+              </div>
+          </div>
+          <div class="col-half">
+              <div class="input-group"><select><option>01 Jan</option><option>02 Jan</option></select><select><option>2015</option><option>2016</option></select></div>
+          </div>
+      </div>
       <div class="row">
           <h4>Terminos y Condiciones</h4>
           <div class="input-group"><input type="checkbox" id="terms" /><label for="terms">Acepto los términos y condiciones para suscribirme a este servicio y, por la presente, confirmo que he leído la política de privacidad.</label></div>

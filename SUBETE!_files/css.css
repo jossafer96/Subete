@@ -1309,6 +1309,7 @@
 
 
 
+
 :root {
   --app-bg-color: #1C1D21;
   --app-dark-color: #31353D;
@@ -1451,7 +1452,7 @@ div.rotate span:nth-child(3) { animation-delay: .3s }
 .wrap[data-pos="0"] .header .bg { opacity: 1 }
 .wrap[data-pos="0"] .header .map { opacity: 0 }
 
-.wrap[data-pos="0"] .header { height: 140px }
+.wrap[data-pos="0"] .header { height: 85px }
 
 .wrap[data-pos="0"] .content {
   height: calc(100% - 200px);
