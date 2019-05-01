@@ -106,7 +106,7 @@ $('.try-again').click(function(){
 				}
 				?>
                             <div class="field name-box">
-                                  <input type="text" id="name_usuario" placeholder="Nombre de usuario" name="name_usuario" type="text" value="" autofocus="" required/ >
+                                  <input type="text" id="name_usuario" placeholder="Nombre usuario" name="name_usuario" type="text" value="" autofocus="" required/ >
                                   <label for="name">Usuario</label>
                                   
                             </div>

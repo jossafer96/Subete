@@ -47,7 +47,7 @@
                                                     <div class="uc-content">
                                                         <h1 style="color:rgb(246, 255, 18);"><span
                                                                 style="font-family:baloo;"><strong>VIAJA
-                                                                    DE FORMA RÁPIDA Y SEGURA</strong></span></h1>
+                                                                    DE FORMA RÁPIDA Y SEGURA CON NOSOTROS..</strong></span></h1>
                                                     </div>
                                                 </div>
                                             </div>
