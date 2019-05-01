@@ -1,6 +1,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div class="global-modal">
+<div class="global-modal ">
    
    <div class=" modal-transition">
    <?php include("table.php"); ?> 
@@ -33,24 +33,23 @@ html,
   left: 0;
 }
 .btn-green-flat-trigger{
-  border: 1px solid #47ba6b;
-  background: transparent;
-  font-size: 20px;
-  color: #47ba6b;
-  font-weight: 200;
-  padding: 15px 30px;
-  display: inline-block;
-  margin: 0 auto;
-  margin-top: 40px;
-  border-radius: 4px;
-  cursor: pointer;
+  border: 1px solid #000000;
+    background: yellow;
+    font-size: 20px;
+    color: #000000;
+    /* font-weight: 200; */
+    padding: 15px 30px;
+    display: inline-block;
+    margin: initial;
+    margin-top: 19px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .btn-green-flat-trigger:hover{
   text-decoration: none;
-  color: #fff;
-  background: #47ba6b;
-  transition: background 0.5s ease,
-              padding 0.8s linear;
+    color: yellow;
+    background: #000000;
+    transition: background 0.9s ease, padding 0.8s linear;
 }
 
 

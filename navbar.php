@@ -47,6 +47,7 @@
                                         font-weight: 500;
                                         letter-spacing: 0px;
                                         text-transform: uppercase;
+                                        text-decoration: none;
                                     }
 
                                     #navigation-64>div>ul>li.page:not(:last-child) {

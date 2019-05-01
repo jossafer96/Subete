@@ -1334,8 +1334,8 @@ body {
   height: 610px;
   width: 555px;
   margin: 10px auto;
-  box-shadow: 40px 40px 40px rgba(0, 0, 0, 1);
-  /*border-radius: 5px;*/
+  
+  border-radius: 20px;
 }
 
 .headbar {
@@ -1360,8 +1360,7 @@ body {
   height: 150px; /*200px;*/
   position: relative;
   transition: all 0.8s ease-in-out;
-  background-image: linear-gradient(45deg, #445878 0%, #92CDCF 100%);
-  /*background: var(--app-accent-color);*/
+  
   transition: all 0.8s ease;
 }
 

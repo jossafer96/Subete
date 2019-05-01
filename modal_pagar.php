@@ -1,7 +1,7 @@
 
     
   
-  <div id="open-modal" class="modal-window">
+  <div id="open-modal" class="modal-window wrap">
     <div>
      
      

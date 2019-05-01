@@ -4,6 +4,11 @@
    
 </div>
 
+
+
+
+
+
 <style>
 
     
@@ -83,16 +88,16 @@ table tr:nth-child(2n+1) {
     position: absolute;
   }
   td:nth-child(2):before {
-    content: 'Name:';
+    content: 'PRECIO';
   }
   td:nth-child(3):before {
-    content: 'Email:';
+    content: 'RUTA';
   }
   td:nth-child(4):before {
-    content: 'Phone:';
+    content: 'HORARIO';
   }
   td:nth-child(5):before {
-    content: 'Comments:';
+    content: '';
   }
   tr {
     padding: 10px 0;
@@ -111,7 +116,7 @@ table tr:nth-child(2n+1) {
     padding: 0;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   }
-  img {
+  img .table-users {
     border: 3px solid;
     border-color: #daeff1;
     height: 100px;

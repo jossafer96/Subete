@@ -16,7 +16,7 @@ if (isset($_POST['hora_salida'])){$hora_salida=($_POST['hora_salida']);}
         
 ?>
 <div class="">
-    <div class=" payment-overview">
+    <div class=" payment-overview ">
     <p class="product-payment" style="font-size: 20px;"><?php echo $nombre_empresa; ?></p>
         <p class="price-payment">L. <?php echo $precio; ?></p>
         <p class="product-payment"><?php echo $ruta; ?></p>

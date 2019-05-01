@@ -19,7 +19,30 @@ if ($login->isUserLoggedIn() == true) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SUBETE!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <style>
+    @media screen and (max-width: 1024px) {
+div .bus-wrapper {
+display: none;
+}
+div .shadow {
+display: none;
+}
+div .road {
+display: none;
+}
+div .login {
+  margin: 201px;
+    max-width: 650px;
+}
+form .field label{
+  display: none;
+}
+body {
+  font-size: 110% !important;
+background: yellow !important;
+}
+}
+    </style>
     <script type="text/javascript">
        $('.error-page').hide(0);
 
@@ -37,7 +60,7 @@ $('.try-again').click(function(){
    <link rel="icon" type="image/png"href="./SUBETE!_files/favicon.png">
 </head>
 
-<body class="" style="">
+<body id="principal">
     
 
 

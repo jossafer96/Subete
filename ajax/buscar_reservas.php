@@ -30,6 +30,18 @@ if (true)
                
   
       ?>
+      <thead style="background: YELLOW;">
+                                                                <tr>
+                                                                    <th style="font-size: 20px;">CODIGO</th>
+                                                                    <th style="font-size: 20px;">EMPRESA</th>
+                                                                    <th style="font-size: 20px;">DESDE</th>
+                                                                    <th style="font-size: 20px;">HACIA</th>
+                                                                    <th style="font-size: 20px;">PRECIO</th>
+                                                                    <th style="font-size: 20px;">HORARIO</th>
+                                                                    <th style="font-size: 20px;">FECHA</th>
+                                                                    <th style="font-size: 20px;">ESTADO</th>
+                                                                </tr>
+                                                            </thead>
   <?php 
       while ($row=mysqli_fetch_array($query)){
 			   
@@ -42,8 +54,8 @@ if (true)
          $fecha_compra=$row['fecha_compra'];
          $estado=$row['estado'];
          ?> 
-		<table cellpadding="0" cellspacing="0" border="0">
-                                                        <tbody>
+	
+                                                       
                                                           <tr>
                                                           <td><?php echo $id_viaje; ?></td>
                                                             <td><?php echo $nombre_empresa; ?></td>
@@ -52,12 +64,15 @@ if (true)
                                                             <td>Lps. <?php echo $precio; ?></td>
                                                             <td><?php echo $horario; ?></td>
                                                             <td><?php echo $fecha_compra; ?></td>
-                                                            <td><?php echo $estado; ?></td>
+                                                            <td><a class="btn-green-flat-trigger" href="#" style="color:yellow;font-weight: 600; FONT-SIZE: 15px;   border: none;margin-top: 25px;" onclick="">
+                                                            <?php if ($estado=1) {
+                                                              echo 'CONFIRMADO';
+                                                            }else{
+                                                              echo 'FINALIZADO';
+                                                            }  ?></a></td> 
                                                           </tr>
                                                           
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
+                                                         
       <?php                                             
 			   
 				   
@@ -65,7 +80,7 @@ if (true)
          }
          ?>
 
-  </table>
+  
   <?php
             
       

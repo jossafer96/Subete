@@ -9,20 +9,20 @@ if (!isset($_SESSION['user_login_status']) and $_SESSION['user_login_status'] !=
 require_once("config/db.php");
 require_once("config/conexion.php");
 
-    $active_inicio="";
-	$active_comprar="active";
-	$active_viajes="";
-	$active_contacto="";
-                      
+$active_inicio = "";
+$active_comprar = "active";
+$active_viajes = "";
+$active_contacto = "";
+
 
 
 ?>
 <!DOCTYPE html>
 
 <head>
-    
+
     <?php include("head.php"); ?>
-    
+
 </head>
 
 <body class="">
@@ -30,9 +30,9 @@ require_once("config/conexion.php");
 
 
     <div class="main-container">
-        
+
         <div class="main-body">
-            
+
             <div class="main-layout
 		                                ">
                 <div class="layers-container">
@@ -42,47 +42,41 @@ require_once("config/conexion.php");
                 <div class="header-and-main-rows  " style="background: rgb(240, 240, 240); margin-bottom: -247.087px;">
                     <?php include("navbar.php"); ?>
                     <div class="main-rows">
-                    
+
                         <div class="uc-row first" data-id="21" style="  margin-bottom:0vh;   background-image:url(./SUBETE!_files/1-13.jpg);    background-repeat: no-repeat;
                         background-size: cover;height: 750px;">
                             <div class="row-container  container " style="height: 690px;">
                                 <div class="row mainRow" style="">
 
-                                    <div class="column col-sm-12 col-lg-6 " datacolumn-id="37" style="  ">
+                                    <div class="column col-sm-12 col-lg-6 wrap " datacolumn-id="37" style="  ">
                                         <div class="column-container vertical-center" style="">
 
-                                            <div class="wrap" data-pos="0" style="background: #0000009e">
+                                            <div class="wrap" data-pos="0" >
                                                 <div class="headbar">
                                                     <i class="zmdi zmdi-arrow-left btnBack"></i> <span>BUSCA TU DESTINO</span>
                                                 </div>
-                                                <div class="header">
-                                                    <div class="bg"></div>
+                                                <div class="header" style="    background-color: yellow;">
+                                                   
                                                     <div class="title">
                                                         <div class="fromPlace" style="color: black;">
-                                                            <span>DESDE</span>
+                                                            <span>BUSCA TU RUTA</span>
                                                         </div>
-                                                        <span class="separator"><i class="zmdi zmdi-airplane"></i></span>
-                                                        <div class="toPlace" style="color: black;">
-                                                            <span>HACIA</span>
-                                                        </div>
+
                                                     </div>
-                                                    <div class="map"></div>
+                                                    
                                                 </div>
 
-                                                <div class="content">
+                                                <div class="content" style="height: calc(100% - 100px);">
                                                     <section style="margin:0px">
                                                         <form>
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input list="desde" type="text" id="q" placeholder="Donde estas?"  onkeyup='load(1);'  />
+                                                                        <input list="desde" type="text" id="q" placeholder="Donde estas?" onkeyup='load(1);' />
                                                                         <datalist id="desde" class='outer_div'>
-                                                                        </datalist> 
-                                                                        
+                                                                        </datalist>
+                                                                        <label for="q">DESDE</label>
 
-
-                                                                        <label for="name">DESDE</label>
-                                                                       
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -92,8 +86,7 @@ require_once("config/conexion.php");
                                                                         <input list="hacia" type="text" id="q1" placeholder="Donde desear viajar?" onkeyup='load1(1);' />
                                                                         <datalist id="hacia" class='outer_div1'>
                                                                         </datalist>
-                                                                        <label for="name">HASTA</label>
-                                                                        
+                                                                        <label for="q1">HASTA</label>
                                                                     </div>
                                                                 </div>
 
@@ -101,9 +94,9 @@ require_once("config/conexion.php");
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input type="date" id="fecha_salida" placeholder="Cuando desear viajar?"  style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;"/>
-                                                                        <label for="name">FECHA SALIDA</label>
-                                                                       
+                                                                        <input type="date" id="fecha_salida" placeholder="Cuando desear viajar?" style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;" />
+                                                                        <label for="name" style="padding: 0px;">FECHA SALIDA</label>
+
                                                                     </div>
                                                                 </div>
 
@@ -111,9 +104,8 @@ require_once("config/conexion.php");
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input type="time" id="fecha_regreso" placeholder="Cuando desear regresar?" style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;"/>
-                                                                        <label for="name">HORA SALIDA</label>
-                                                                      
+                                                                        <input type="time" id="fecha_regreso" placeholder="Cuando desear regresar?" style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;" />
+                                                                        <label for="name" style="padding: 0px;">HORA SALIDA</label>
                                                                     </div>
                                                                 </div>
 
@@ -122,9 +114,9 @@ require_once("config/conexion.php");
 
 
                                                             <div class="block center">
- 
-  <a class="btn-green-flat-trigger" href="#" style="background-color: yellow;color: black;font-weight: 600;    border: none;margin-top: 25px;" onclick="buscar();">BUSCAR</a>
-</div>
+
+                                                                <a class="btn-green-flat-trigger" href="#" onclick="buscar();">BUSCAR</a>
+                                                            </div>
 
                                                         </form>
                                                         <div class="list">
@@ -151,20 +143,20 @@ require_once("config/conexion.php");
                                         </div>
                                     </div>
 
-                                    <div class="column col-sm-12 col-lg-6" datacolumn-id="37" style="  ">
+                                    <div class="column col-sm-12 col-lg-6 wrap" datacolumn-id="37" style="">
                                         <div class="column-container vertical-center" style="">
 
-                                            <div class="wrap" data-pos="0" style="background: #0000009e">
+                                            <div class="wrap" data-pos="0" >
                                                 <div class="headbar">
                                                     <i class="zmdi zmdi-arrow-left btnBack"></i> <span>ELIGE TU RUTA</span>
                                                 </div>
 
 
-                                                <div class="content">
-                                                
-                                                <?php include("modal_pagar.php"); ?> 
-                                                <?php include("modal.php"); ?> 
-                                               
+                                                <div class="content" style="height: 100%;">
+
+                                                    <?php include("modal_pagar.php"); ?>
+                                                    <?php include("modal.php"); ?>
+
                                                 </div>
 
                                             </div>
@@ -180,9 +172,9 @@ require_once("config/conexion.php");
                     </div>
                     <div class="push" style="height: 247.087px;"></div>
                 </div>
-                
+
                 <?php include("footer.php"); ?>
-                
+
 
                 <style>
                     form .control {
@@ -230,7 +222,7 @@ require_once("config/conexion.php");
                         left: 0;
                         background: yellow;
                         width: 20%;
-                        padding: 18px 0;
+                        padding: 15px 0;
                         font-size: 1.45em;
                         letter-spacing: 0.075em;
                         -webkit-transition: all 333ms ease-in-out;
@@ -344,13 +336,19 @@ require_once("config/conexion.php");
                         outline: none;
                         background: #cd6302;
                     }
+
+                    .control .control-head {
+
+                        margin-top: 0px;
+
+                    }
                 </style>
-	<script type="text/javascript" src="js/destinos.js"></script>
-    <script type="text/javascript" src="js/buscar_rutas.js"></script>
+                <script type="text/javascript" src="js/destinos.js"></script>
+                <script type="text/javascript" src="js/buscar_rutas.js"></script>
 
 
 
-    
+
 </body>
 
 
