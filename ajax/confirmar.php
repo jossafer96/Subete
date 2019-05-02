@@ -7,8 +7,8 @@ include('is_logged.php');
 		$id_usuario= $_SESSION['id_usuario'];
 		$id_ruta=$_POST["id_ruta"];
 		$estado=intval($_POST['estado']);
-		$fecha_compra=DATE("Y/m/d ");
-		$sql="INSERT INTO viajes_reservados (id_viaje, id_usuario, id_ruta, estado,fecha_compra) VALUES (null,'$id_usuario','$id_ruta','$estado','$fecha_compra')";
+		
+		$sql="INSERT INTO viajes_reservados (id_viaje, id_usuario, id_ruta, estado,fecha_compra) VALUES (null,'$id_usuario','$id_ruta','$estado',SYSDATE())";
 		
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert) {

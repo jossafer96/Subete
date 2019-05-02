@@ -70,7 +70,7 @@
 /* Demo Styles */
 
 .modal-window div:not(:last-of-type) {
-  margin-bottom: 15px;
+  
 }
 small {
   color: #aaa;

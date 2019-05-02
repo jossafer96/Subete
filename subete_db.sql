@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 30-04-2019 a las 04:21:37
+-- Tiempo de generación: 02-05-2019 a las 00:45:55
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 5.6.38
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `subete_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contacto`
+--
+
+DROP TABLE IF EXISTS `contacto`;
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `id_contacto` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(64) NOT NULL,
+  `mensaje` varchar(128) NOT NULL,
+  `correo_usuario` varchar(64) NOT NULL,
+  PRIMARY KEY (`id_contacto`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`id_contacto`, `id_usuario`, `nombre`, `mensaje`, `correo_usuario`) VALUES
+(1, 1, 'fernando', 'holaaaa', 'Tapices@unah.hn'),
+(2, 1, 'fernando', 'es muy bueno', 'Tapices@unah.hn');
 
 -- --------------------------------------------------------
 
@@ -107,20 +131,26 @@ INSERT INTO `rutas` (`id_ruta`, `id_empresa`, `id_origen`, `id_destino`, `hora_s
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `name_usuario` varchar(64) NOT NULL,
+  `nombre_usuario` varchar(64) NOT NULL,
+  `apellido_usuario` varchar(64) NOT NULL,
+  `identidad_usuario` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
   `genero` varchar(64) NOT NULL,
   `correo_usuario` varchar(64) NOT NULL,
+  `telefono_usuario` varchar(64) NOT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
   PRIMARY KEY (`id_usuario`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `name_usuario`, `password`, `genero`, `correo_usuario`) VALUES
-(1, 'ana', '$2y$10$ahoUoh0vB8qxNiilVYKXKOSTUokSZjFJYbeCZgtLdnd1mB.A1yNL6', 'male', 'ana@gmail.com'),
-(2, 'afer', '$2y$10$/9WlR.viP6Bk9G7oX2W4kuIlpgHqWUGBCxNFdcbbZF3q6SagaetvG', 'female', 'fer@gmail.com');
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `identidad_usuario`, `password`, `genero`, `correo_usuario`, `telefono_usuario`, `fecha_nacimiento`) VALUES
+(1, 'ana', '', '', '$2y$10$ahoUoh0vB8qxNiilVYKXKOSTUokSZjFJYbeCZgtLdnd1mB.A1yNL6', 'male', 'ana@gmail.com', '', NULL),
+(2, 'afer', '', '', '$2y$10$/9WlR.viP6Bk9G7oX2W4kuIlpgHqWUGBCxNFdcbbZF3q6SagaetvG', 'female', 'fer@gmail.com', '', NULL),
+(3, 'Fernando', 'Padilla', 'Fernando', '$2y$10$GA2krllys8wYf3jNoFCcMOHhw.hQ09MXGN8yN4r7AKBDs0PNhr/Ga', 'male', 'fer1@gmail.com', '22335566', '2019-04-30'),
+(4, 'Juan', 'Hernandez', '0801155500124', '$2y$10$JPbJfO3vVFTTT2Tr5Px08uBKSIQ1em26FNWDLn3sdV8EKWbn2gft6', 'male', 'joh@gmail.com', '22335566', '2019-04-30');
 
 -- --------------------------------------------------------
 
@@ -136,18 +166,22 @@ CREATE TABLE IF NOT EXISTS `viajes_reservados` (
   `estado` int(11) NOT NULL,
   `fecha_compra` date DEFAULT NULL,
   PRIMARY KEY (`id_viaje`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `viajes_reservados`
 --
 
 INSERT INTO `viajes_reservados` (`id_viaje`, `id_usuario`, `id_ruta`, `estado`, `fecha_compra`) VALUES
-(1, 1, 1, 1, '2019-04-29'),
-(2, 1, 2, 1, '2019-04-21'),
+(1, 1, 1, 0, '2019-04-29'),
+(2, 1, 2, 0, '2019-04-21'),
 (3, 1, 1, 1, '2019-04-29'),
 (4, 1, 2, 1, '2019-04-29'),
-(5, 1, 1, 1, '2019-04-29');
+(5, 1, 1, 1, '2019-04-29'),
+(6, 4, 1, 0, '2019-05-01'),
+(7, 1, 2, 0, '2019-05-02'),
+(8, 3, 1, 1, '2019-05-02'),
+(9, 3, 2, 1, '2019-05-01');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

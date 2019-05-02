@@ -23,7 +23,7 @@ if (isset($_POST['fecha_compra'])){$fecha_compra=($_POST['fecha_compra']);}
         <p class="product-payment"><?php echo $ruta; ?></p>
         <p class="product-payment">Comprado el <?php echo $fecha_compra; ?></p>
         <p class="product-payment" style="font-size: 16px;"><?php echo $horario; ?></p>
-        <p class="product-payment" style="font-size: 16px;">RUTA #<?php echo $id_ruta; ?></p>
+        <p class="product-payment" style="font-size: 16px;">BOLETO #  <?php echo $id_ruta; ?></p>
         <a href="#" title="" class="modal-close" style="margin-right: 158px;    font-size: 16px;float:left;" >CERRAR</a>
         <a href="#" title="" class="" style="    color: yellow;
     line-height: 150px;
