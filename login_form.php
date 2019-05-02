@@ -45,7 +45,7 @@
 <form class="form-horizontal" method="post" id="guardar_usuario" name="guardar_usuario" >
       <div class="row">
           <h4>Crea tu Cuenta</h4>
-          <div class="input-group input-group-icon"><input type="text" id="name_usuario" name="name_usuario" placeholder="Nombre" required />
+          <div class="input-group input-group-icon"><input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre" required />
               
           </div>
 
@@ -69,7 +69,7 @@
           <div class="col-half">
               <h4>Fecha Nacimiento</h4>
               <div class="input-group">
-                  <div class="col-third"><input type="date" style="color: yellow;"  /></div>
+                  <div class="col-third"><input type="date" name="fecha_nacimiento" id="fecha_nacimiento" style="color: yellow;" required /></div>
                  
               </div>
           </div>
@@ -88,7 +88,9 @@
           <h4>Terminos y Condiciones</h4>
           <div class="input-group"><input type="checkbox" id="terms" /><label for="terms">Acepto los términos y condiciones para suscribirme a este servicio y, por la presente, confirmo que he leído la política de privacidad.</label></div>
       </div>
-			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
+			<button type="submit" class="btn btn-primary" id="guardar_datos" style="    background-color: yellow;
+    color: black;
+    border-color: black;">Guardar datos</button>
   </form>
 	<div id="resultados"></div><!-- Carga los datos ajax -->
 				<div class='outer_div'></div><!-- Carga los datos ajax -->
@@ -349,17 +351,18 @@ $( "#guardar_usuario" ).submit(function( event ) {
   $('#guardar_datos').attr("disabled", true);
  
  var parametros = $(this).serialize();
- alert(parametros);
+
 	 $.ajax({
 			type: "POST",
 			url: "ajax/nuevo_usuario.php",
 			data: parametros,
 			 beforeSend: function(objeto){
-				$("#resultados_ajax").html("Mensaje: Cargando...");
+				
 			  },
 			success: function(datos){
-			$("#resultados_ajax").html(datos);
-			$('#guardar_datos').attr("disabled", false);
+
+				alert(datos);
+				location.href="index.php";
 		
 		  }
 	});

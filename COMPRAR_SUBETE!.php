@@ -51,19 +51,19 @@ $active_contacto = "";
                                     <div class="column col-sm-12 col-lg-6 wrap " datacolumn-id="37" style="  ">
                                         <div class="column-container vertical-center" style="">
 
-                                            <div class="wrap" data-pos="0" >
+                                            <div class="wrap" data-pos="0">
                                                 <div class="headbar">
                                                     <i class="zmdi zmdi-arrow-left btnBack"></i> <span>BUSCA TU DESTINO</span>
                                                 </div>
                                                 <div class="header" style="    background-color: yellow;">
-                                                   
+
                                                     <div class="title">
                                                         <div class="fromPlace" style="color: black;">
                                                             <span>BUSCA TU RUTA</span>
                                                         </div>
 
                                                     </div>
-                                                    
+
                                                 </div>
 
                                                 <div class="content" style="height: calc(100% - 100px);">
@@ -72,9 +72,14 @@ $active_contacto = "";
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input list="desde" type="text" id="q" placeholder="Donde estas?" onkeyup='load(1);' />
-                                                                        <datalist id="desde" class='outer_div'>
-                                                                        </datalist>
+                                                                        <div class="input-group" style="width: 80%;float: right;">
+                                                                            <select class="custom-select" id="q" style="height: 60px;padding: 0.375rem 1.75rem 0.375rem 3.75rem;    font-size: 1.5rem;
+    font-weight: 600;color: #ffffff;background-color: #1C1D21;border: 1px solid yellow;">
+                                                                               
+                                                                               
+                                                                            </select>
+
+                                                                        </div>
                                                                         <label for="q">DESDE</label>
 
                                                                     </div>
@@ -83,9 +88,14 @@ $active_contacto = "";
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input list="hacia" type="text" id="q1" placeholder="Donde desear viajar?" onkeyup='load1(1);' />
-                                                                        <datalist id="hacia" class='outer_div1'>
-                                                                        </datalist>
+                                                                    <div class="input-group" style="width: 80%;float: right;">
+                                                                            <select class="custom-select" id="q1" style="height: 60px;padding: 0.375rem 1.75rem 0.375rem 3.75rem;    font-size: 1.5rem;
+    font-weight: 600;color: #ffffff;background-color: #1C1D21;border: 1px solid yellow;">
+                                                                               
+                                                                               
+                                                                            </select>
+
+                                                                        </div>
                                                                         <label for="q1">HASTA</label>
                                                                     </div>
                                                                 </div>
@@ -94,7 +104,7 @@ $active_contacto = "";
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input type="date" id="fecha_salida" placeholder="Cuando desear viajar?" style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;" />
+                                                                        <input type="date" id="fecha_salida" placeholder="Cuando desear viajar?" style="color:white; background: #1c1d21;width: 34%;    height: 60px;    font-size: 20px;    border: 1px solid yellow;" />
                                                                         <label for="name" style="padding: 0px;">FECHA SALIDA</label>
 
                                                                     </div>
@@ -104,7 +114,7 @@ $active_contacto = "";
                                                             <div class="control select">
                                                                 <div class="control-head">
                                                                     <div class="field name-box">
-                                                                        <input type="time" id="fecha_regreso" placeholder="Cuando desear regresar?" style="color:white; background: #1c1d21;width: 44%;    font-size: 20px;" />
+                                                                        <input type="time" id="fecha_regreso" placeholder="Cuando desear regresar?" style="color:white; background: #1c1d21;width: 34%;    height: 60px;    font-size: 20px;    border: 1px solid yellow;" />
                                                                         <label for="name" style="padding: 0px;">HORA SALIDA</label>
                                                                     </div>
                                                                 </div>
@@ -146,7 +156,7 @@ $active_contacto = "";
                                     <div class="column col-sm-12 col-lg-6 wrap" datacolumn-id="37" style="">
                                         <div class="column-container vertical-center" style="">
 
-                                            <div class="wrap" data-pos="0" >
+                                            <div class="wrap" data-pos="0">
                                                 <div class="headbar">
                                                     <i class="zmdi zmdi-arrow-left btnBack"></i> <span>ELIGE TU RUTA</span>
                                                 </div>
@@ -170,7 +180,7 @@ $active_contacto = "";
 
                         </div>
                     </div>
-                    <div class="push" style="height: 247.087px;"></div>
+                    
                 </div>
 
                 <?php include("footer.php"); ?>

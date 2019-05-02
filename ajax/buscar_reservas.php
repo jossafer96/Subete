@@ -3,13 +3,13 @@
 include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 
 
-
+$id_usuario=$_SESSION['id_usuario'];
 	/* Connect To Database*/
 	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 if (true)
-{   $sWhere=" where a.id_usuario=1";
+{   $sWhere=" where a.id_usuario=".$id_usuario;
   
    $count_query   = mysqli_query($con, "SELECT count(*) AS numrows FROM viajes_reservados ");
    $row= mysqli_fetch_array($count_query);
@@ -64,12 +64,15 @@ if (true)
                                                             <td>Lps. <?php echo $precio; ?></td>
                                                             <td><?php echo $horario; ?></td>
                                                             <td><?php echo $fecha_compra; ?></td>
-                                                            <td><a class="btn-green-flat-trigger" href="#" style="color:yellow;font-weight: 600; FONT-SIZE: 15px;   border: none;margin-top: 25px;" onclick="">
-                                                            <?php if ($estado=1) {
-                                                              echo 'CONFIRMADO';
-                                                            }else{
-                                                              echo 'FINALIZADO';
-                                                            }  ?></a></td> 
+                                                            <?php if ($estado==1) {
+                                                              $estate='CONFIRMADO';
+                                                              $evento='';
+                                                            }elseif($estado==0){
+                                                              $estate='CANCELADO';
+                                                              $evento='none';
+                                                            }  ?>
+                                                            <td><a class="btn-green-flat-trigger" href="#open-modal" style="color:yellow;font-weight: 600; FONT-SIZE: 15px;   border: none;margin-top: 25px;pointer-events:<?php echo $evento?>;" onclick="modificar();" >
+                                                            <?php echo $estate ?> </a></td> 
                                                           </tr>
                                                           
                                                          

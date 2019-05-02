@@ -1,5 +1,6 @@
 		$(document).ready(function(){
 			load(1);
+			load1(1);
 		});
 
 		function load(page){
@@ -12,7 +13,7 @@
 				
 			  },
 				success:function(data){
-					$(".outer_div").html(data).fadeIn('slow');
+					$(".custom-select").html(data).fadeIn('slow');
 					
 					
 				}
@@ -22,13 +23,13 @@
 			var q= $("#q1").val();
 			
 			$.ajax({
-				url:'./ajax/buscar_destino.php?action=ajax&page='+page+'&q='+q,
+				url:'./ajax/buscar_destino.php?action=ajax1&page='+page+'&q='+q,
 				
 				 beforeSend: function(objeto){
 				
 			  },
 				success:function(data){
-					$(".outer_div1").html(data).fadeIn('slow');
+					$("#q1").html(data).fadeIn('slow');
 					
 					
 				}

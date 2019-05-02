@@ -25,7 +25,7 @@ $active_contacto = "";
 <body class="" onload="cargar_rutas();">
 
 
-
+<?php include("modal_pagar.php"); ?>
     <div class="main-container">
         <div class="main-body">
             <div class="main-layout
@@ -77,6 +77,12 @@ $active_contacto = "";
                     </div>
                     <?php include("footer.php"); ?>
                     <script type="text/javascript" src="js/cargar_viajes.js"></script>
+                    <style>
+                    div .payment-overview{
+                        width: 100%;
+                        padding-top: 30px;
+                    }
+                    </style>
 </body>
 
 </html>

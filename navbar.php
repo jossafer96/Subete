@@ -174,13 +174,13 @@
 
 
 
-                                            <div id="panel" class=" page   show" data-anchor="" style="    float: right;height: 0; margin: -27px; margin-left: 55px;">
+                                            <div id="panel" class=" page   show" data-anchor="" style="    float: right;height: 0; margin-top: -50px; margin-left: 55px;">
                                                 <div class="username">
                                                     <h3><?php
-                                                        $sql_vendedor = mysqli_query($con, "select * from usuarios order by name_usuario");
+                                                        $sql_vendedor = mysqli_query($con, "select * from usuarios order by nombre_usuario");
                                                         while ($rw = mysqli_fetch_array($sql_vendedor)) {
                                                             $id_vendedor = $rw["id_usuario"];
-                                                            $nombre_vendedor = $rw["name_usuario"];
+                                                            $nombre_vendedor = $rw["nombre_usuario"];
                                                             if ($id_vendedor == $_SESSION['id_usuario']) {
                                                                 echo $nombre_vendedor;
                                                             } else {
@@ -194,7 +194,7 @@
 
                                                     <div id="container-avatar">
                                                         <!-- <div id="badge"></div>-->
-                                                        <img src="https://1.bp.blogspot.com/-JtED2x_7XAw/UfhHlD-TXmI/AAAAAAAAD9Q/lugUa6id_9Y/s1600/-Teen-Vogue-by-Barrett-Sweger-2013-emma-watson-34892202-1063-1440.jpg" />
+                                                        <img src="https://balitour99.com/wp-content/uploads/2018/07/user.png" />
                                                         <span class="entypo-menu"></span>
 
                                                         <div class="nav">
@@ -208,6 +208,10 @@
                                             </div>
                                         </ul>
                                     </div>
+
+
+
+                                    
                                 </div>
                             </div>
                         </div>

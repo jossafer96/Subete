@@ -45,11 +45,11 @@ class Login
     private function dologinWithPostData()
     {
         // check login form contents
-        if (empty($_POST['name_usuario'])) {
-            $this->errors[] = "Username field was empty.";
+        if (empty($_POST['nombre_usuario'])) {
+            $this->errors[] = "Nombre de Usuario vacio.";
         } elseif (empty($_POST['password'])) {
-            $this->errors[] = "Password field was empty.";
-        } elseif (!empty($_POST['name_usuario']) && !empty($_POST['password'])) {
+            $this->errors[] = "Contraseña vacia.";
+        } elseif (!empty($_POST['nombre_usuario']) && !empty($_POST['password'])) {
 
             // create a database connection, using the constants from config/db.php (which we loaded in index.php)
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -63,13 +63,14 @@ class Login
             if (!$this->db_connection->connect_errno) {
 
                 // escape the POST stuff
-                $name_usuario = $this->db_connection->real_escape_string($_POST['name_usuario']);
+                $name_usuario = $this->db_connection->real_escape_string($_POST['nombre_usuario']);
 
                 // database query, getting all the info of the selected user (allows login via email address in the
                 // username field)
               
-                $sql = "SELECT id_usuario, name_usuario, correo_usuario, password FROM usuarios  
-                        WHERE name_usuario= '" . $name_usuario . "' OR correo_usuario = '" . $name_usuario . "';";
+                $sql = "SELECT id_usuario, nombre_usuario, correo_usuario, password FROM usuarios  
+                        WHERE nombre_usuario= '" . $name_usuario . "' OR correo_usuario = '" . $name_usuario . "';";
+                        
                 $result_of_login_check = $this->db_connection->query($sql);
 
                 // if this user exists
@@ -84,7 +85,7 @@ class Login
 
                         // write user data into PHP SESSION (a file on your server)
                         $_SESSION['id_usuario'] = $result_row->id_usuario;
-						$_SESSION['name_usuario'] = $result_row->name_usuario;
+						$_SESSION['name_usuario'] = $result_row->nombre_usuario;
                         $_SESSION['correo_usuario'] = $result_row->correo_usuario;
                         $_SESSION['user_login_status'] = 1;
 

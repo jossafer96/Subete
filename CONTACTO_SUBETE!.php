@@ -46,22 +46,22 @@ $active_contacto="active";
                       <div class="field name-box">
                         <input type="text" id="name" placeholder="Quien eres?" />
                         <label for="name">Nombre</label>
-                        <span class="ss-icon">check</span>
+                       
                       </div>
 
                       <div class="field email-box">
                         <input type="text" id="email" placeholder="nombre@email.com" />
                         <label for="email">Correo</label>
-                        <span class="ss-icon">check</span>
+                        
                       </div>
 
                       <div class="field msg-box">
                         <textarea id="msg" rows="4" placeholder="Escribe tu mensaje aqui......" /></textarea>
                         <label for="msg">Msg</label>
-                        <span class="ss-icon">check</span>
+                       
                       </div>
 
-                      <input class="button" type="submit" value="Enviar" />
+                      <input class="button" type="submit" value="Enviar" onclick="contacto();"/>
                     </form>
                   </section>
 
@@ -113,6 +113,7 @@ $active_contacto="active";
             }
 
             form .field label {
+              font-weight: 600;
               color: black;
               text-transform: uppercase;
               position: absolute;
@@ -150,15 +151,16 @@ $active_contacto="active";
             form .field input[type="text"],
             form .field textarea {
               border: none;
-              background: black;
-              width: 80.5%;
-              margin: 0;
-              padding: 18px 0;
-              padding-left: 19.5%;
-              color: #313a3d;
-              font-size: 1.4em;
-              letter-spacing: 0.05em;
-              text-transform: uppercase;
+              background: #74666600;
+    width: 80.5%;
+    margin: 0;
+    padding: 18px 0;
+    padding-left: 19.5%;
+    color: #ffffff;
+    font-size: 1.4em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
             }
 
             form .field input[type="text"]#msg,
@@ -235,7 +237,7 @@ $active_contacto="active";
               background: #cd6302;
             }
           </style>
-
+ <script type="text/javascript" src="js/contacto.js"></script>
 </body>
 
 </html>
